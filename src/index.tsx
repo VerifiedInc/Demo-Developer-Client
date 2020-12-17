@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import 'typeface-lato';
+import 'typeface-playfair-display';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
