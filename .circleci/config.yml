@@ -1,0 +1,34 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:14.15.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}--{{ arch }}
+
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}--{{ arch }}
+
+      - run: yarn install
+
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}--{{ arch }}
+          paths:
+            - .cache/yarn
+
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}--{{ arch }}
+          paths:
+            - node_modules
+
+      - run:
+          name: lint and test
+          command: yarn test
+
+workflows:
+  test:
+    jobs:
+      - test
