@@ -94,3 +94,12 @@ export interface NoPresentation {
   proof: Proof;
   type: ['NoPresentation', ('Declination' | 'Report' | 'NoPresentation')?];
 }
+
+export interface Action<AllowedTypes = string, Payload = any> {
+  type: AllowedTypes;
+  payload?: Payload
+}
+
+export type Dispatch<ActionType = Action> = (
+  action: ActionType
+) => void;
