@@ -26,8 +26,8 @@ export interface Verifier {
 
 export interface HolderApp {
   uuid: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
   name: string;
   uriScheme: string;
 }

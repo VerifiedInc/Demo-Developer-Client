@@ -1,5 +1,11 @@
 import { v4 } from 'uuid';
-import { User, Issuer, Verifier, Credential } from '../types';
+import {
+  User,
+  Issuer,
+  Verifier,
+  Credential,
+  HolderApp
+} from '../types';
 
 const now = new Date();
 
@@ -56,4 +62,12 @@ export const dummyCredential: Credential = {
     verificationMethod: 'did:unum:d620f77a-b454-4294-a6db-47af171897a6',
     proofPurpose: 'AssertionMethod'
   }
+};
+
+export const dummyHolderApp: HolderApp = {
+  uuid: v4(),
+  name: 'Demo Holder App',
+  createdAt: now,
+  updatedAt: now,
+  uriScheme: 'unumid://'
 };

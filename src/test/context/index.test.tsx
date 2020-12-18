@@ -5,6 +5,7 @@ import { Provider } from '../../context';
 import { useIssuer } from '../../context/issuer';
 import { useVerifier } from '../../context/verifier';
 import { useUser } from '../../context/user';
+import { useHolderApp } from '../../context/holderApp';
 
 describe('app context', () => {
   describe('Provider', () => {
@@ -18,6 +19,7 @@ describe('app context', () => {
         useIssuer();
         useVerifier();
         useUser();
+        useHolderApp();
         return null;
       };
       expect(() => render(<Provider><TestComponent /></Provider>)).not.toThrow();
