@@ -6,7 +6,8 @@ import {
   Credential,
   HolderApp,
   PresentationRequestPostResponse,
-  Presentation
+  Presentation,
+  NoPresentation
 } from '../types';
 
 const now = new Date();
@@ -133,5 +134,21 @@ export const dummyPresentation: Presentation = {
     type: 'secp256r1Signature2020',
     verificationMethod: 'did:unum:3ff2f020-50b0-4f4c-a267-a9f104aedcd8#1e126861-a51b-491f-9206-e2c6b8639fd1',
     proofPurpose: 'AssertionMethod'
+  }
+};
+
+export const dummyNoPresentation: NoPresentation = {
+  presentationRequestUuid: '2d4965cb-6505-454b-b652-9eb2e563b27c',
+  holder: 'did:unum:5b329cd1-4832-448c-8d7d-08f49e3c6c6d#bab80ad2-08ad-44e7-8549-3d10dd6f7c03',
+  type: [
+    'NoPresentation',
+    'NoPresentation'
+  ],
+  proof: {
+    created: '2020-11-12T20:05:41.917Z',
+    signatureValue: 'AN1rKs4bRoNEprfrHAikfjwSsU5dhmgPKj1EpJg9mBYqNubLzU2x6HSK7S44hn7cEc141sMHfGbxhq5qJGcVnLZgUQBh6KM8t',
+    type: 'secp256r1Signature2020',
+    verificationMethod: 'did:unum:5b329cd1-4832-448c-8d7d-08f49e3c6c6d#bab80ad2-08ad-44e7-8549-3d10dd6f7c03',
+    proofPurpose: 'assertionMethod'
   }
 };
