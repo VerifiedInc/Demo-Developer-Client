@@ -40,6 +40,26 @@ export interface Proof {
   proofPurpose: string;
 }
 
+export interface CredentialSubject {
+  id: string;
+  [key: string]: any;
+}
+
+export interface Credential {
+  '@context': ['https://www.w3.org/2018/credentials/v1', ...string[]];
+  credentialStatus: {
+    id: string;
+    type: string;
+  };
+  credentialSubject: CredentialSubject;
+  issuer: string;
+  type: ['VerifiableCredential', ...string[]];
+  id: string;
+  issuanceDate: Date;
+  expirationDate?: Date;
+  proof: Proof;
+}
+
 export interface CredentialRequest {
   type: string;
   issuers: string[];
