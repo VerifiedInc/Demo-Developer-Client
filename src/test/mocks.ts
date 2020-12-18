@@ -4,7 +4,8 @@ import {
   Issuer,
   Verifier,
   Credential,
-  HolderApp
+  HolderApp,
+  PresentationRequestPostResponse
 } from '../types';
 
 const now = new Date();
@@ -70,4 +71,45 @@ export const dummyHolderApp: HolderApp = {
   createdAt: now,
   updatedAt: now,
   uriScheme: 'unumid://'
+};
+
+export const dummyPresentationRequestPostResponse: PresentationRequestPostResponse = {
+  presentationRequest: {
+    uuid: 'e9bba635-8503-40c0-9f65-823fe6df86a5',
+    createdAt: new Date('2020-12-18T22:43:53.041Z'),
+    updatedAt: new Date('2020-12-18T22:43:53.041Z'),
+    expiresAt: new Date('2020-12-18T22:53:53.041Z'),
+    verifier: 'did:unum:1426ac33-a3ad-48d4-8bec-74fa17d31d77',
+    credentialRequests: [
+      {
+        type: 'DummyCredential',
+        issuers: [
+          'did:unum:d620f77a-b454-4294-a6db-47af171897a6'
+        ],
+        required: false
+      }
+    ],
+    proof: {
+      created: '2020-12-18T22:43:53.042Z',
+      signatureValue: 'iKx1CJM7nKy656rXFiVjGiRHbqdTNopp5ETvzuCGB9dCSu6U8jEQMxy8w1gPJpmJQ2fSfrdVeSDuoWn89U6MjqsS6UbW39RATD',
+      type: 'secp256r1Signature2020',
+      verificationMethod: 'did:unum:1426ac33-a3ad-48d4-8bec-74fa17d31d77',
+      proofPurpose: 'AssertionMethod'
+    },
+    metadata: {},
+    holderAppUuid: 'a91a5574-e338-46bd-9405-3a72acbd1b6a'
+  },
+  verifier: {
+    name: 'ACME, Inc. Verifier',
+    did: 'did:unum:1426ac33-a3ad-48d4-8bec-74fa17d31d77',
+    url: 'https://demo-auth-api.dev-unumid.org/presentation'
+  },
+  issuers: {
+    'did:unum:d620f77a-b454-4294-a6db-47af171897a6': {
+      name: 'ACME, Inc. Issuer',
+      did: 'did:unum:d620f77a-b454-4294-a6db-47af171897a6'
+    }
+  },
+  deeplink: 'https://unumid.org/unumid/presentationRequest/e9bba635-8503-40c0-9f65-823fe6df86a5',
+  qrCode: 'data:image/png;base64,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'
 };
