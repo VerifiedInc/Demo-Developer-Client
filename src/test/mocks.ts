@@ -5,7 +5,8 @@ import {
   Verifier,
   Credential,
   HolderApp,
-  PresentationRequestPostResponse
+  PresentationRequestPostResponse,
+  Presentation
 } from '../types';
 
 const now = new Date();
@@ -112,4 +113,25 @@ export const dummyPresentationRequestPostResponse: PresentationRequestPostRespon
   },
   deeplink: 'https://unumid.org/unumid/presentationRequest/e9bba635-8503-40c0-9f65-823fe6df86a5',
   qrCode: 'data:image/png;base64,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'
+};
+
+export const dummyPresentation: Presentation = {
+  '@context': [
+    'https://www.w3.org/2018/credentials/v1'
+  ],
+  uuid: v4(),
+  type: [
+    'VerifiablePresentation'
+  ],
+  verifiableCredential: [
+    dummyCredential
+  ],
+  presentationRequestUuid: dummyPresentationRequestPostResponse.presentationRequest.uuid,
+  proof: {
+    created: '2020-09-03T18:50:52.105Z',
+    signatureValue: 'iKx1CJLYue7vopUo2fqGps3TWmxqRxoBDTupumLkaNp2W3UeAjwLUf5WxLRCRkDzEFeKCgT7JdF5fqbpvqnBZoHyYzWYbmW4YQ',
+    type: 'secp256r1Signature2020',
+    verificationMethod: 'did:unum:3ff2f020-50b0-4f4c-a267-a9f104aedcd8#1e126861-a51b-491f-9206-e2c6b8639fd1',
+    proofPurpose: 'AssertionMethod'
+  }
 };

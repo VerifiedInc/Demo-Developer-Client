@@ -5,6 +5,7 @@ import { IssuerProvider } from './issuer';
 import { VerifierProvider } from './verifier';
 import { HolderAppProvider } from './holderApp';
 import { PresentationRequestPostResponseProvider } from './presentationRequestPostResponse';
+import { PresentationProvider } from './presentation';
 
 type ProviderProps = PropsWithChildren<{}>;
 
@@ -14,7 +15,9 @@ export const Provider: FC<ProviderProps> = ({ children = null }) => (
       <IssuerProvider>
         <HolderAppProvider>
           <PresentationRequestPostResponseProvider>
-            {children}
+            <PresentationProvider>
+              {children}
+            </PresentationProvider>
           </PresentationRequestPostResponseProvider>
         </HolderAppProvider>
       </IssuerProvider>
