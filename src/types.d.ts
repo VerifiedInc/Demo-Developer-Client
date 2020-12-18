@@ -17,8 +17,8 @@ export interface Issuer {
 
 export interface Verifier {
   uuid: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
   name: string;
   did: string;
   url: string;
