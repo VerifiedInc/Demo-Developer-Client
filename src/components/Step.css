@@ -1,0 +1,28 @@
+.step {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  align-items: space-between;
+  margin: 0 auto;
+}
+
+.step-header {
+  text-align: left;
+  width: 100%;
+}
+
+.step-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.step-body {
+  display: flex;
+  flex-direction: row;
+}
