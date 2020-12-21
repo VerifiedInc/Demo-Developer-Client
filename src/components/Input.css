@@ -1,0 +1,40 @@
+.input {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input input {
+  height: 40px;
+  width: 310px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: solid 1px #9b9b9b;
+  padding-left: 10px;
+  font-family: 'Lato';
+}
+
+.input input::placeholder {
+  font-family: 'Lato';
+  color: #9b9b9b;
+}
+
+.input input:disabled {
+  background-color: #dcdcdc;
+  color: #000000;
+}
+
+.input-group input:focus {
+  outline: none;
+}

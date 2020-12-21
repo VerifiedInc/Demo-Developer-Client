@@ -11,6 +11,10 @@ h1, h2 {
   font-family: 'Playfair Display'
 }
 
+h3 {
+  margin-top: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
