@@ -1,0 +1,34 @@
+.json-result {
+  text-align: left;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.json-result-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.json-result-box {
+  min-height: 40px;
+  width: 310px;
+  border-radius: 5px;
+  border: solid 1px #9b9b9b;
+  padding-left: 10px;
+}
+
+.json-result-box pre {
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+}
+.json-result.disabled {
+  color: #9b9b9b;
+}
+
+.json-result.disabled .json-result-box {
+  background-color: #dcdcdc;
+}
