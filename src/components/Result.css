@@ -21,6 +21,7 @@
   border: solid 1px #9b9b9b;
   padding-left: 10px;
   font-family:'Courier New', Courier, monospace;
+  overflow-x: scroll;
 }
 
 .result.disabled {

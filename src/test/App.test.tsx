@@ -16,4 +16,8 @@ describe('app', () => {
   it('shows step 2', () => {
     expect(app.getByText('2. Issue a Credential')).toBeInTheDocument();
   });
+
+  it('shows step 3', () => {
+    expect(app.getByText('3. Verifier creates Request')).toBeInTheDocument();
+  });
 });

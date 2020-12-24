@@ -5,6 +5,7 @@ import React, {
   useReducer,
   PropsWithChildren
 } from 'react';
+import { client } from '../feathers';
 
 import { HolderApp, Action, Dispatch } from '../types';
 
@@ -29,6 +30,13 @@ export const holderAppReducer = (state: HolderAppState, action: HolderAppAction)
 
 export const setHolderApp = (dispatch: HolderAppDispatch, holderApp: HolderApp): void => {
   dispatch({ type: 'SET_HOLDERAPP', payload: holderApp });
+};
+
+export const getDefaultHolderApp = async (dispatch: HolderAppDispatch): Promise<HolderApp> => {
+  const holderAppService = client.service('holderApp');
+  const holderApp = await holderAppService.get('59213bb6-8752-40c6-932c-f4d79a3ae45a');
+  setHolderApp(dispatch, holderApp);
+  return holderApp;
 };
 
 export const HolderAppProvider: FC<HolderAppProviderProps> = ({ children = null }) => {

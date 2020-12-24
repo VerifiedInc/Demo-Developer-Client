@@ -29,6 +29,7 @@ export interface IssueCredentialStepProps {
   handleSubmit: MouseEventHandler;
   credential?: Credential;
 }
+
 const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   disabled = true,
   issuer = undefined,

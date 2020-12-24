@@ -5,6 +5,7 @@ import React, {
   useReducer,
   PropsWithChildren
 } from 'react';
+import { client } from '../feathers';
 
 import { Verifier, Action, Dispatch } from '../types';
 
@@ -29,6 +30,13 @@ export const verifierReducer = (state: VerifierState, action: VerifierAction): V
 
 export const setVerifier = (dispatch: VerifierDispatch, verifier: Verifier): void => {
   dispatch({ type: 'SET_VERIFIER', payload: verifier });
+};
+
+export const getDefaultVerifier = async (dispatch: VerifierDispatch): Promise<Verifier> => {
+  const verifierService = client.service('verifier');
+  const verifier = await verifierService.get('15d3efd2-2116-469d-b4e4-d8b0580917df');
+  setVerifier(dispatch, verifier);
+  return verifier;
 };
 
 export const VerifierProvider: FC<VerifierProviderProps> = ({ children = null }) => {
