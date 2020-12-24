@@ -22,6 +22,10 @@
   margin-left: 50px;
 }
 
+.step-right h3 {
+  text-align: left;
+}
+
 .step-body {
   display: flex;
   flex-direction: row;
