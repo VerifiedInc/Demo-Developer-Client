@@ -17,11 +17,12 @@
 
 .json-input textarea {
   min-height: 100px;
-  width: 310px;
+  width: 390px;
   font-size: 18px;
   border-radius: 5px;
   border: solid 1px #9b9b9b;
   padding-left: 10px;
+  padding-right: 10px;
   font-family: 'Courier New', Courier, monospace;
   resize: none;
 }

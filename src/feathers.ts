@@ -3,7 +3,10 @@ import socketio from 'socket.io-client';
 import feathersSocketio from '@feathersjs/socketio-client';
 
 const client = feathers();
-const socket = socketio(process.env.REACT_APP_API_URL as string);
+const socket = socketio(
+  process.env.REACT_APP_API_URL as string,
+  { transports: ['websocket', 'polling'] }
+);
 
 client.configure(feathersSocketio(socket));
 client.configure(feathers.authentication({
