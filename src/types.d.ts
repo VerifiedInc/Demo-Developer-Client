@@ -66,6 +66,13 @@ export interface CredentialRequest {
   required?: boolean;
 }
 
+export interface PresentationRequestOptions {
+  verifierUuid: string;
+  issuerUuid: string;
+  holderAppUuid: string;
+  credentialTypes: string[];
+}
+
 export interface PresentationRequest {
   uuid: string;
   createdAt: Date;

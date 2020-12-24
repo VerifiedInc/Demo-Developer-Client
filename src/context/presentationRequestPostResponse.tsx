@@ -5,8 +5,14 @@ import React, {
   useReducer,
   PropsWithChildren
 } from 'react';
+import { client } from '../feathers';
 
-import { PresentationRequestPostResponse, Action, Dispatch } from '../types';
+import {
+  PresentationRequestPostResponse,
+  Action,
+  Dispatch,
+  PresentationRequestOptions
+} from '../types';
 
 export type PresentationRequestPostResponseState = {
   presentationRequestPostResponse: PresentationRequestPostResponse | undefined
@@ -41,6 +47,16 @@ export const setPresentationRequestPostResponse = (
   presentationRequestPostResponse: PresentationRequestPostResponse
 ): void => {
   dispatch({ type: 'SET_PRESENTATIONREQUESTPOSTRESPONSE', payload: presentationRequestPostResponse });
+};
+
+export const sendRequest = async (
+  dispatch: PresentationRequestPostResponseDispatch,
+  options: PresentationRequestOptions
+): Promise<PresentationRequestPostResponse> => {
+  const presentationRequestService = client.service('presentationRequest');
+  const response = await presentationRequestService.create(options);
+  setPresentationRequestPostResponse(dispatch, response);
+  return response;
 };
 
 export const PresentationRequestPostResponseProvider: FC<PresentationRequestPostResponseProviderProps> = (
