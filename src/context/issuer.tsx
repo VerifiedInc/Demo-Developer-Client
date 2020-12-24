@@ -5,6 +5,7 @@ import React, {
   useReducer,
   PropsWithChildren
 } from 'react';
+import { client } from '../feathers';
 
 import { Issuer, Action, Dispatch } from '../types';
 
@@ -29,6 +30,13 @@ export const issuerReducer = (state: IssuerState, action: IssuerAction): IssuerS
 
 export const setIssuer = (dispatch: IssuerDispatch, issuer: Issuer): void => {
   dispatch({ type: 'SET_ISSUER', payload: issuer });
+};
+
+export const getDefaultIssuer = async (dispatch: IssuerDispatch): Promise<Issuer> => {
+  const issuerService = client.service('issuer');
+  const issuer = await issuerService.get('cc09a71f-2996-46b4-b643-28d60d845564');
+  setIssuer(dispatch, issuer);
+  return issuer;
 };
 
 export const IssuerProvider: FC<IssuerProviderProps> = ({ children = null }) => {

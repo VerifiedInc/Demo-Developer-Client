@@ -6,7 +6,8 @@ import React, {
   PropsWithChildren
 } from 'react';
 
-import { Credential, Action, Dispatch } from '../types';
+import { Credential, Action, Dispatch, CredentialOptions } from '../types';
+import { client } from '../feathers';
 
 export type CredentialState = { credential: Credential | undefined };
 type CredentialProviderProps = PropsWithChildren<{}>;
@@ -29,6 +30,16 @@ export const credentialReducer = (state: CredentialState, action: CredentialActi
 
 export const setCredential = (dispatch: CredentialDispatch, credential: Credential): void => {
   dispatch({ type: 'SET_CREDENTIAL', payload: credential });
+};
+
+export const issueCredential = async (
+  dispatch: CredentialDispatch,
+  credentialOptions: CredentialOptions
+): Promise<Credential> => {
+  const credentialService = client.service('credential');
+  const credential = await credentialService.create(credentialOptions);
+  setCredential(dispatch, credential.credential);
+  return credential;
 };
 
 export const CredentialProvider: FC<CredentialProviderProps> = ({ children = null }) => {

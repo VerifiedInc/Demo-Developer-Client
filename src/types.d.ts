@@ -115,6 +115,14 @@ export interface NoPresentation {
   type: ['NoPresentation', ('Declination' | 'Report' | 'NoPresentation')?];
 }
 
+export interface CredentialOptions {
+  userUuid: string;
+  issuerUuid: string;
+  type: string;
+  expirationDate: Date;
+  claims: Record<string, unknown>;
+}
+
 export interface Action<AllowedTypes = string, Payload = any> {
   type: AllowedTypes;
   payload?: Payload
