@@ -55,8 +55,8 @@ export const sendRequest = async (
 ): Promise<PresentationRequestPostResponse> => {
   const presentationRequestService = client.service('presentationRequest');
   const response = await presentationRequestService.create(options);
-  setPresentationRequestPostResponse(dispatch, response);
-  return response;
+  setPresentationRequestPostResponse(dispatch, response.data);
+  return response.data;
 };
 
 export const PresentationRequestPostResponseProvider: FC<PresentationRequestPostResponseProviderProps> = (
