@@ -20,4 +20,12 @@ describe('app', () => {
   it('shows step 3', () => {
     expect(app.getByText('3. Verifier creates Request')).toBeInTheDocument();
   });
+
+  it('shows step 4', () => {
+    expect(app.getByText('4. Verifier shares deep link with subject.')).toBeInTheDocument();
+  });
+
+  it('shows step 5', () => {
+    expect(app.getByText('5. Subject uses holder to share presentation')).toBeInTheDocument();
+  });
 });
