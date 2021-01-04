@@ -14,7 +14,7 @@ const now = new Date();
 
 export const dummyUser: User = {
   uuid: v4(),
-  name: 'Testy McTesterson',
+  name: 'test-username-123',
   did: `did:unum:${v4()}`,
   createdAt: now,
   updatedAt: now,
