@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, MouseEventHandler, useState } from 'react';
 
 import UsernameStep from '../components/UsernameStep';
-import { useUser, getUserByUsername } from '../context/user';
+import { useUser, loginUser } from '../context/user';
 
 const UsernameStepContainer: FC = () => {
   const [username, setUsername] = useState('');
@@ -17,7 +17,7 @@ const UsernameStepContainer: FC = () => {
   const handleSubmit: MouseEventHandler = async (e): Promise<void> => {
     e.preventDefault();
     console.log('username', username);
-    await getUserByUsername(userDispatch, username);
+    await loginUser(userDispatch, username);
   };
 
   return (
