@@ -71,6 +71,7 @@ export interface PresentationRequestOptions {
   issuerUuid: string;
   holderAppUuid: string;
   credentialTypes: string[];
+  userUuid: string;
 }
 
 export interface PresentationRequest {

@@ -98,7 +98,9 @@ export const dummyPresentationRequestPostResponse: PresentationRequestPostRespon
       verificationMethod: 'did:unum:1426ac33-a3ad-48d4-8bec-74fa17d31d77',
       proofPurpose: 'AssertionMethod'
     },
-    metadata: {},
+    metadata: {
+      userUuid: dummyUser.uuid
+    },
     holderAppUuid: 'a91a5574-e338-46bd-9405-3a72acbd1b6a'
   },
   verifier: {
