@@ -43,11 +43,14 @@ const RequestStepContainer: FC = () => {
 
     if (disabled) return;
 
+    if (!userState?.user?.uuid) return;
+
     const options = {
       verifierUuid: verifierState.verifier?.uuid as string,
       issuerUuid: issuerState.issuer?.uuid as string,
       holderAppUuid: holderAppState.holderApp?.uuid as string,
-      credentialTypes: [credentialState.credential?.type[1] as string]
+      credentialTypes: [credentialState.credential?.type[1] as string],
+      userUuid: userState?.user?.uuid
     };
 
     await sendRequest(requestDispatch, options);

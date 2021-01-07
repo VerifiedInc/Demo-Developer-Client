@@ -32,12 +32,12 @@ export const setUser = (dispatch: UserDispatch, user: User): void => {
   dispatch({ type: 'SET_USER', payload: user });
 };
 
-export const getUserByUsername = async (dispatch: UserDispatch, username: string): Promise<User> => {
-  const userService = client.service('user');
+export const loginUser = async (dispatch: UserDispatch, username: string): Promise<User> => {
+  const userAuthService = client.service('userAuthentication');
   console.log('username', username);
-  const user = await userService.get(null, { query: { where: { name: username } } });
-  setUser(dispatch, user);
-  return user;
+  const result = await userAuthService.create({ strategy: 'user', name: username });
+  setUser(dispatch, result.user);
+  return result.user;
 };
 
 export const UserProvider: FC<UserProviderProps> = ({ children = null }) => {

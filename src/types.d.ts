@@ -71,6 +71,7 @@ export interface PresentationRequestOptions {
   issuerUuid: string;
   holderAppUuid: string;
   credentialTypes: string[];
+  userUuid: string;
 }
 
 export interface PresentationRequest {
@@ -138,3 +139,17 @@ export interface Action<AllowedTypes = string, Payload = any> {
 export type Dispatch<ActionType = Action> = (
   action: ActionType
 ) => void;
+
+export interface PresentationResponse {
+  type: 'VerifiablePresentation';
+  isVerified: boolean;
+  data: Presentation;
+}
+
+export interface NoPresentationResponse {
+  type: 'NoPresentation';
+  isVerified: boolean;
+  data: NoPresentation;
+}
+
+export type PresentationOrNoPresentationResponse = PresentationResponse | NoPresentationResponse;

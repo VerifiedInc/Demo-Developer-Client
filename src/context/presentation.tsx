@@ -8,11 +8,12 @@ import React, {
 
 import { Presentation, Action, Dispatch } from '../types';
 
-export type PresentationState = { presentation: Presentation | undefined };
+export type PresentationState = { presentation: Presentation | undefined, isVerified: boolean | undefined };
 type PresentationProviderProps = PropsWithChildren<{}>;
 
-type PresentationActionTypes = 'SET_PRESENTATION';
-export type PresentationAction = Action<PresentationActionTypes, Presentation>;
+type SetPresentationAction = Action<'SET_PRESENTATION', Presentation | undefined>
+type SetIsValidAction = Action<'SET_IS_VERIFIED', boolean | undefined>
+export type PresentationAction = SetPresentationAction | SetIsValidAction;
 export type PresentationDispatch = Dispatch<PresentationAction>;
 
 const PresentationStateContext = createContext<PresentationState | undefined>(undefined);
@@ -22,6 +23,8 @@ export const presentationReducer = (state: PresentationState, action: Presentati
   switch (action.type) {
     case 'SET_PRESENTATION':
       return { ...state, presentation: action.payload };
+    case 'SET_IS_VERIFIED':
+      return { ...state, isVerified: action.payload };
     default:
       throw new Error('Unhandled action type in presentationReducer.');
   }
@@ -31,8 +34,12 @@ export const setPresentation = (dispatch: PresentationDispatch, presentation: Pr
   dispatch({ type: 'SET_PRESENTATION', payload: presentation });
 };
 
+export const setIsVerified = (dispatch: PresentationDispatch, isVerified: boolean): void => {
+  dispatch({ type: 'SET_IS_VERIFIED', payload: isVerified });
+};
+
 export const PresentationProvider: FC<PresentationProviderProps> = ({ children = null }) => {
-  const [state, dispatch] = useReducer(presentationReducer, { presentation: undefined });
+  const [state, dispatch] = useReducer(presentationReducer, { presentation: undefined, isVerified: undefined });
   return (
     <PresentationStateContext.Provider value={state}>
       <PresentationDispatchContext.Provider value={dispatch}>

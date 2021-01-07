@@ -8,7 +8,8 @@ import {
   PresentationProvider,
   usePresentation,
   usePresentationState,
-  usePresentationDispatch
+  usePresentationDispatch,
+  setIsVerified
 } from '../../context/presentation';
 import { dummyPresentation } from '../mocks';
 
@@ -20,13 +21,19 @@ describe('verifier context', () => {
         payload: dummyPresentation
       };
 
-      const state = presentationReducer({ presentation: undefined }, action);
+      const state = presentationReducer(
+        { presentation: undefined, isVerified: undefined },
+        action
+      );
       expect(state).toEqual({ presentation: dummyPresentation });
     });
 
     it('throws if called with an unrecognized action', () => {
       const action = { type: 'dargle', payload: 'bargle' } as unknown as PresentationAction;
-      expect(() => presentationReducer({ presentation: undefined }, action)).toThrow();
+      expect(() => presentationReducer(
+        { presentation: undefined, isVerified: undefined },
+        action
+      )).toThrow();
     });
   });
 
@@ -35,6 +42,14 @@ describe('verifier context', () => {
       const dispatch = jest.fn();
       setPresentation(dispatch, dummyPresentation);
       expect(dispatch).toBeCalledWith({ type: 'SET_PRESENTATION', payload: dummyPresentation });
+    });
+  });
+
+  describe('setIsVerified', () => {
+    it('dispatches an action with the correct type and payload', () => {
+      const dispatch = jest.fn();
+      setIsVerified(dispatch, true);
+      expect(dispatch).toBeCalledWith({ type: 'SET_IS_VERIFIED', payload: true });
     });
   });
 
@@ -58,7 +73,7 @@ describe('verifier context', () => {
   describe('usePresentation hook', () => {
     it('returns a tuple containing presentation state and dispatch', () => {
       const { result } = renderHook(() => usePresentation(), { wrapper: PresentationProvider });
-      expect(result.current[0]).toEqual({ presentation: undefined });
+      expect(result.current[0]).toEqual({ presentation: undefined, isVerified: undefined });
       expect(typeof result.current[1]).toEqual('function');
     });
 
@@ -71,7 +86,7 @@ describe('verifier context', () => {
   describe('usePresentationState hook', () => {
     it('returns the presentation state', () => {
       const { result } = renderHook(() => usePresentationState(), { wrapper: PresentationProvider });
-      expect(result.current).toEqual({ presentation: undefined });
+      expect(result.current).toEqual({ presentation: undefined, isVerified: undefined });
     });
 
     it('throws if used outside of a PresentationProvider', () => {

@@ -28,4 +28,8 @@ describe('app', () => {
   it('shows step 5', () => {
     expect(app.getByText('5. Subject uses holder to share presentation')).toBeInTheDocument();
   });
+
+  it('shows step 6', () => {
+    expect(app.getByText('6. Verifier verifies presentation')).toBeInTheDocument();
+  });
 });
