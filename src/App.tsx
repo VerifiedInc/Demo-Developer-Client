@@ -12,6 +12,7 @@ import IssueCredentialStep from './containers/IssueCredentialStep';
 import RequestStep from './containers/RequestStep';
 import DeeplinkStep from './containers/DeeplinkStep';
 import ShareStep from './components/ShareStep';
+import VerifyStep from './containers/VerifyStep';
 
 function App () {
   const presentationDispatch = usePresentationDispatch();
@@ -41,6 +42,7 @@ function App () {
       <RequestStep />
       <DeeplinkStep />
       <ShareStep />
+      <VerifyStep />
     </div>
   );
 }
