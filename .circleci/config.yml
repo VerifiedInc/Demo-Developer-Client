@@ -41,7 +41,7 @@ jobs:
         default: "248606629437.dkr.ecr.us-west-2.amazonaws.com"
       repo:
         type: string
-      base_url:
+      api_url:
         type: string
         default: "https://customer-api.dev-unumid.org"
 
@@ -58,7 +58,7 @@ jobs:
             echo Logging in to Amazon ECR...
             $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
             echo Building the Docker image...
-            docker build --build-arg BASE_URL=<< parameters.base_url >> -t ${CIRCLE_SHA1} .
+            docker build --build-arg BASE_URL=<< parameters.api_url >> -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-latest
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-"${CIRCLE_BRANCH}-${CIRCLE_BUILD_NUM}"
             echo Pushing the Docker image...

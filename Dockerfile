@@ -15,7 +15,7 @@ RUN yarn install
 COPY ./ /app/
 
 ARG API_URL
-ENV REACT_APP_API_URL=${BASE_URL}
+ENV REACT_APP_API_URL=${API_URL}
 
 RUN yarn build
 
