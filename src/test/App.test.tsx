@@ -32,4 +32,8 @@ describe('app', () => {
   it('shows step 6', () => {
     expect(app.getByText('6. Verifier verifies presentation')).toBeInTheDocument();
   });
+
+  it('shows step 7', () => {
+    expect(app.getByText('7. (OPTIONAL) Issuer revokes credential')).toBeInTheDocument();
+  });
 });

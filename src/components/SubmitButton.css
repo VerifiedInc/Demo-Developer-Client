@@ -1,6 +1,7 @@
 .submit-button {
   height: 40px;
-  width: 150px;
+  min-width: 150px;
+  max-width: 250px;
   background-color: #0dbc3d;
   border: none;
   color: #ffffff;
@@ -9,6 +10,8 @@
   font-family: 'Lato';
   border-radius: 5px;
   cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .submit-button:disabled {
