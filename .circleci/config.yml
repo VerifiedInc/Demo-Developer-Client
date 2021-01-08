@@ -43,7 +43,7 @@ jobs:
         type: string
       base_url:
         type: string
-        default: "https://test-customer.dev-unumid.org"
+        default: "https://customer-api.dev-unumid.org"
 
     steps:
       - checkout
@@ -76,7 +76,7 @@ jobs:
         type: string
       base_url:
         type: string
-        default: "https://test-customer.sandbox-unumid.org"
+        default: "https://customer-api.sandbox-unumid.org"
 
     steps:
       - checkout
