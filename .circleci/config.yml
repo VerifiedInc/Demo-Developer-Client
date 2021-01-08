@@ -203,14 +203,14 @@ workflows:
                 - main
                 - test-circleci
 
-      # - deploy-image:
-      #     context: AWS-Dev
-      #     repo: demo-developer-client
-      #     deployment: dev-demo-developer-client
-      #     requires:
-      #       - build-and-push-image
-      #     filters:
-      #       branches:
-      #         only:
-      #           - main
-      #           - test-circleci
+      - deploy-image:
+          context: AWS-Dev
+          repo: demo-developer-client
+          deployment: dev-demo-developer-client
+          requires:
+            - build-and-push-image
+          filters:
+            branches:
+              only:
+                - main
+                - test-circleci
