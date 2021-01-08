@@ -117,7 +117,7 @@ jobs:
           cluster-name: << parameters.cluster-name >>
       - run:
           command: |
-            kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:"dev-${CIRCLE_BRANCH}-${CIRCLE_PREVIOUS_BUILD_NUM}"
+            kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:dev-"${CIRCLE_BRANCH}-${CIRCLE_PREVIOUS_BUILD_NUM}"
           name: Update container image
 
   deploy-image-sandbox:
