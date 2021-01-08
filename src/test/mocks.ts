@@ -7,7 +7,8 @@ import {
   HolderApp,
   PresentationRequestPostResponse,
   Presentation,
-  NoPresentation
+  NoPresentation,
+  CredentialStatus
 } from '../types';
 
 const now = new Date();
@@ -153,4 +154,9 @@ export const dummyNoPresentation: NoPresentation = {
     verificationMethod: 'did:unum:5b329cd1-4832-448c-8d7d-08f49e3c6c6d#bab80ad2-08ad-44e7-8549-3d10dd6f7c03',
     proofPurpose: 'assertionMethod'
   }
+};
+
+export const dummyCredentialStatus: CredentialStatus = {
+  credentialId: dummyCredential.id,
+  status: 'valid'
 };

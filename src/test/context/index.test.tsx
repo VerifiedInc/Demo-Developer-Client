@@ -9,6 +9,7 @@ import { useHolderApp } from '../../context/holderApp';
 import { usePresentationRequestPostResponse } from '../../context/presentationRequestPostResponse';
 import { usePresentation } from '../../context/presentation';
 import { useNoPresentation } from '../../context/noPresentation';
+import { useCredentialStatus } from '../../context/credentialStatus';
 
 describe('app context', () => {
   describe('Provider', () => {
@@ -26,6 +27,7 @@ describe('app context', () => {
         usePresentationRequestPostResponse();
         usePresentation();
         useNoPresentation();
+        useCredentialStatus();
         return null;
       };
       expect(() => render(<Provider><TestComponent /></Provider>)).not.toThrow();

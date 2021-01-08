@@ -13,6 +13,7 @@ import RequestStep from './containers/RequestStep';
 import DeeplinkStep from './containers/DeeplinkStep';
 import ShareStep from './components/ShareStep';
 import VerifyStep from './containers/VerifyStep';
+import RevokeStep from './containers/RevokeStep';
 
 function App () {
   const presentationDispatch = usePresentationDispatch();
@@ -43,6 +44,7 @@ function App () {
       <DeeplinkStep />
       <ShareStep />
       <VerifyStep />
+      <RevokeStep />
     </div>
   );
 }
