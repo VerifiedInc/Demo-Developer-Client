@@ -15,8 +15,9 @@ RUN yarn install
 COPY ./ /app/
 
 ARG API_URL
+RUN echo "API_URL ARG ${API_URL}"
 ENV REACT_APP_API_URL=${API_URL}
-
+RUN echo "REACT_APP_API_URL ${REACT_APP_API_URL}"
 RUN yarn build
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
