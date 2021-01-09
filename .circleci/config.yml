@@ -92,13 +92,13 @@ jobs:
         default: "https://customer-api.sandbox-unumid.org"
       issuer_uuid:
         type: string
-        default: "d14ca24c-5323-4b79-9dfa-6471b014d68c"
+        default: "ba63eef3-58e7-4964-bd62-75948de5fa67"
       verifier_uuid:
         type: string
-        default: "e0bd4b5a-e98a-4f22-be2f-d560e4c633e1"
+        default: "5dfd0c17-426e-4d1f-9384-e12eb98c9d12"
       holder_app_uuid:
         type: string
-        default: "f1e5393d-1b69-4c5c-bc5b-5ad161c8c084"
+        default: "5b4895e7-edc1-4f22-bff3-c44bb5ae48db"
 
     steps:
       - checkout
