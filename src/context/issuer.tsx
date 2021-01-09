@@ -34,7 +34,7 @@ export const setIssuer = (dispatch: IssuerDispatch, issuer: Issuer): void => {
 
 export const getDefaultIssuer = async (dispatch: IssuerDispatch): Promise<Issuer> => {
   const issuerService = client.service('issuer');
-  const issuer = await issuerService.get('cc09a71f-2996-46b4-b643-28d60d845564');
+  const issuer = await issuerService.get(process.env.REACT_APP_ISSUER_UUID);
   setIssuer(dispatch, issuer);
   return issuer;
 };

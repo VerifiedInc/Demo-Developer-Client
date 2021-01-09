@@ -34,7 +34,7 @@ export const setHolderApp = (dispatch: HolderAppDispatch, holderApp: HolderApp):
 
 export const getDefaultHolderApp = async (dispatch: HolderAppDispatch): Promise<HolderApp> => {
   const holderAppService = client.service('holderApp');
-  const holderApp = await holderAppService.get('59213bb6-8752-40c6-932c-f4d79a3ae45a');
+  const holderApp = await holderAppService.get(process.env.REACT_APP_HOLDER_APP_UUID);
   setHolderApp(dispatch, holderApp);
   return holderApp;
 };
