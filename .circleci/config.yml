@@ -192,6 +192,7 @@ workflows:
       - deploy-image-release:
           requires:
             - build-and-push-image-release
+          context: AWS-Dev
           repo: demo-developer-client
           deployment: sandbox-demo-developer-client
           filters:
