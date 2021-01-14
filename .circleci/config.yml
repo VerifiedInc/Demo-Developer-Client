@@ -158,6 +158,10 @@ jobs:
     executor: aws-eks/python3
     steps:
       - kubernetes/install
+      - run:
+          command: |
+            echo aws-region ${AWS_REGION}
+            echo cluster-name << parameters.cluster-name >>
       - aws-eks/update-kubeconfig-with-authenticator:
           install-kubectl: true
           aws-region: ${AWS_REGION}
