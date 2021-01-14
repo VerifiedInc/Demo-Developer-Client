@@ -146,31 +146,6 @@ jobs:
             kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:"dev-${CIRCLE_BRANCH}-${CIRCLE_PREVIOUS_BUILD_NUM}"
           name: Update container image
 
-  # deploy-image-sandbox:
-  #   parameters:
-  #     cluster-name:
-  #       type: string
-  #       default: "dev-customer-cluster"
-  #     repo:
-  #       type: string
-  #     deployment:
-  #       type: string
-  #   executor: aws-eks/python3
-  #   steps:
-  #     - kubernetes/install
-  #     - run:
-  #         command: |
-  #           echo aws-region ${AWS_REGION}
-  #           echo cluster-name << parameters.cluster-name >>
-  #     - aws-eks/update-kubeconfig-with-authenticator:
-  #         install-kubectl: true
-  #         aws-region: ${AWS_REGION}
-  #         cluster-name: << parameters.cluster-name >>
-  #     - run:
-  #         command: |
-  #           kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:"dev-${CIRCLE_BRANCH}-${CIRCLE_PREVIOUS_BUILD_NUM}"
-  #         name: Update container image
-
   deploy-image-release:
     parameters:
       cluster-name:
