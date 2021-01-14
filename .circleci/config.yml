@@ -79,7 +79,7 @@ jobs:
             docker push << parameters.reg >>/<< parameters.repo >>:dev-latest
           name: Update container image
 
-  build-and-push-image-sandbox:
+  build-and-push-image-release:
     executor: aws-cli/default
     parameters:
       reg:
@@ -171,7 +171,7 @@ jobs:
   #           kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:"dev-${CIRCLE_BRANCH}-${CIRCLE_PREVIOUS_BUILD_NUM}"
   #         name: Update container image
 
-  deploy-image-sandbox:
+  deploy-image-release:
     parameters:
       cluster-name:
         type: string
@@ -203,7 +203,7 @@ workflows:
             branches:
               ignore: /.*/
 
-      - build-and-push-image-sandbox:
+      - build-and-push-image-release:
           requires:
             - test
           context: AWS-Dev
@@ -214,9 +214,9 @@ workflows:
             branches:
               ignore: /.*/
 
-      - deploy-image-sandbox:
+      - deploy-image-release:
           requires:
-            - build-and-push-image-sandbox
+            - build-and-push-image-release
           repo: demo-developer-client
           deployment: sandbox-demo-developer-client
           filters:
@@ -243,7 +243,7 @@ workflows:
                 - main
                 - test-circleci
                 - sandbox
-      - build-and-push-image-sandbox:
+      - build-and-push-image:
           requires:
             - test
           context: AWS-Dev
@@ -254,12 +254,12 @@ workflows:
                 - main
                 - test-circleci
 
-      - deploy-image-sandbox:
+      - deploy-image:
           context: AWS-Dev
           repo: demo-developer-client
-          deployment: sandbox-demo-developer-client
+          deployment: dev-demo-developer-client
           requires:
-            - build-and-push-image-sandbox
+            - build-and-push-image
           filters:
             branches:
               only:
