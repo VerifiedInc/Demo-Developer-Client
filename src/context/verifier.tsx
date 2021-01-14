@@ -34,7 +34,7 @@ export const setVerifier = (dispatch: VerifierDispatch, verifier: Verifier): voi
 
 export const getDefaultVerifier = async (dispatch: VerifierDispatch): Promise<Verifier> => {
   const verifierService = client.service('verifier');
-  const verifier = await verifierService.get('15d3efd2-2116-469d-b4e4-d8b0580917df');
+  const verifier = await verifierService.get(process.env.REACT_APP_VERIFIER_UUID);
   setVerifier(dispatch, verifier);
   return verifier;
 };
