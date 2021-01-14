@@ -150,7 +150,7 @@ jobs:
     parameters:
       cluster-name:
         type: string
-        default: "sandbox-customer-cluster"
+        default: "dev-customer-cluster"
       repo:
         type: string
       deployment:
