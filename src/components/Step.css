@@ -4,6 +4,7 @@
   max-width: 800px;
   align-items: space-between;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .step-header {

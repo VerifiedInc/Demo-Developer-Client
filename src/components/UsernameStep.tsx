@@ -21,8 +21,11 @@ const UsernameStep: FC<UsernameStepProps> = ({
   handleSubmit = noop,
   handleUsernameChange = noop
 }) => {
+  const header = '1. Log in with your username.';
+  const description = 'Enter the username the mobile app generated for you. This login is just a setup step for the demo. You wouldn\'t normally do this when implementing Unum ID.';
+
   return (
-    <Step header='1. Log In with your username'>
+    <Step header={header} description={description}>
       <StepLeft>
         <form>
           <Input

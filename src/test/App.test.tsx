@@ -10,15 +10,15 @@ describe('app', () => {
   });
 
   it('shows step 1', () => {
-    expect(app.getByText('1. Log In with your username')).toBeInTheDocument();
+    expect(app.getByText('1. Log in with your username.')).toBeInTheDocument();
   });
 
   it('shows step 2', () => {
-    expect(app.getByText('2. Issue a Credential')).toBeInTheDocument();
+    expect(app.getByText('2. Issuer issues credential.')).toBeInTheDocument();
   });
 
   it('shows step 3', () => {
-    expect(app.getByText('3. Verifier creates Request')).toBeInTheDocument();
+    expect(app.getByText('3. Verifier creates request.')).toBeInTheDocument();
   });
 
   it('shows step 4', () => {
@@ -26,15 +26,15 @@ describe('app', () => {
   });
 
   it('shows step 5', () => {
-    expect(app.getByText('5. Subject uses holder to share presentation')).toBeInTheDocument();
+    expect(app.getByText('5. Subject uses holder to share presentation.')).toBeInTheDocument();
   });
 
   it('shows step 6', () => {
-    expect(app.getByText('6. Verifier verifies presentation')).toBeInTheDocument();
+    expect(app.getByText('6. Verifier verifies presentation.')).toBeInTheDocument();
   });
 
   it('shows step 7', () => {
-    expect(app.getByText('7. (OPTIONAL) Issuer revokes credential')).toBeInTheDocument();
+    expect(app.getByText('7. (OPTIONAL) Issuer revokes credential.')).toBeInTheDocument();
   });
 
   it('shows logout', () => {

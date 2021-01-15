@@ -1,18 +1,22 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, ReactNode } from 'react';
+import Description from './Description';
 
 import './Step.css';
 
 export type StepProps = PropsWithChildren<{
   header: string;
+  description?: ReactNode;
 }>;
 
 const Step: FC<StepProps> = ({
   children = null,
-  header = ''
+  header = '',
+  description = null
 }) => {
   return (
     <div className='step'>
       <h2 className='step-header'>{header}</h2>
+      { description && <Description>{description}</Description> }
       <div className='step-body'>
         {children}
       </div>
