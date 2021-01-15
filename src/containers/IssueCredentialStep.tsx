@@ -19,8 +19,8 @@ const IssueCredentialStepContainer: FC = () => {
   const disabled = !userState.user || !issuerState.issuer;
   const oneYearFromNow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000).toISOString().substr(0, 10);
   const [expirationDate, setExpirationDate] = useState(oneYearFromNow);
-  const [credentialType, setCredentialType] = useState('UsernameCredential');
-  const [claims, setClaims] = useState(JSON.stringify({}));
+  const [credentialType, setCredentialType] = useState('BankIdentityCredential');
+  const [claims, setClaims] = useState('');
 
   useEffect(() => {
     const getIssuer = async () => {
@@ -32,7 +32,40 @@ const IssueCredentialStepContainer: FC = () => {
 
   useEffect(() => {
     if (userState.user) {
-      setClaims(JSON.stringify({ username: userState.user.name }));
+      const demoClaims = {
+        firstName: 'Wile',
+        middleInitial: 'E.',
+        lastName: 'Coyote',
+        username: userState.user.name,
+        ssn4: 4321,
+        contactInformation: {
+          emailAddress: 'AnvilAvoider@gmail.com',
+          phoneNumber: '1234567890',
+          homeAddress: {
+            line1: '98765 Runner Rd.',
+            line2: null,
+            city: 'Desert',
+            state: 'AZ',
+            zip: 12345,
+            country: 'United States'
+          }
+        },
+        driversLicense: {
+          state: 'AZ',
+          number: 'n-123456789',
+          expiration: '2026-01-14T00:00:00.000Z'
+        },
+        accounts: {
+          checking: {
+            accountNumber: '543888430912',
+            routingNumber: '021000021'
+          }
+        },
+        confidence: '99%'
+      };
+      setClaims(JSON.stringify(demoClaims));
+    } else {
+      setClaims('');
     }
   }, [userState]);
 
