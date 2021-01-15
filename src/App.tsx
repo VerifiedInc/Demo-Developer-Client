@@ -15,6 +15,7 @@ import ShareStep from './components/ShareStep';
 import VerifyStep from './containers/VerifyStep';
 import RevokeStep from './containers/RevokeStep';
 import Logout from './containers/Logout';
+import Intro from './components/Intro';
 
 function App () {
   const presentationDispatch = usePresentationDispatch();
@@ -39,6 +40,7 @@ function App () {
 
   return (
     <div className='App'>
+      <Intro />
       <UsernameStep />
       <IssueCredentialStep />
       <RequestStep />
