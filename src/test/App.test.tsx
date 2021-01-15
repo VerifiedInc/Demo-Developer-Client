@@ -9,6 +9,10 @@ describe('app', () => {
     app = render(<App />, { wrapper: Provider });
   });
 
+  it('shows the intro', () => {
+    expect(app.getByText('Unum ID Developer Demo')).toBeInTheDocument();
+  });
+
   it('shows step 1', () => {
     expect(app.getByText('1. Log in with your username.')).toBeInTheDocument();
   });
