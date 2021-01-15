@@ -36,4 +36,8 @@ describe('app', () => {
   it('shows step 7', () => {
     expect(app.getByText('7. (OPTIONAL) Issuer revokes credential')).toBeInTheDocument();
   });
+
+  it('shows logout', () => {
+    expect(app.getByText('Log Out')).toBeInTheDocument();
+  });
 });
