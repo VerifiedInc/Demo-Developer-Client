@@ -25,7 +25,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
   const header = '7. (OPTIONAL) Issuer revokes credential.';
   const description = (
     <>
-      In this step, ypu&apos;ll act as the issuer again.
+      In this step, you&apos;ll act as the issuer again.
       You can (optionally) revoke the credential you issued.
       You might do this, for example, to issue a new version of the credential.
     </>
@@ -38,7 +38,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
           <fieldset disabled={disabled}>
             <HardcodedInput
               inputId='credential-id'
-              labelText='credentialId'
+              labelText='credential ID'
               value={credentialId}
             />
             <SubmitButton

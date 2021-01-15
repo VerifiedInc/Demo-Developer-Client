@@ -53,7 +53,7 @@ const RequestStep: FC<RequestStepProps> = ({
             />
             <HardcodedInput
               inputId='holder-app-uuid'
-              labelText='holderAppUuid'
+              labelText='Holder App UUID'
               value={holderAppUuid}
             />
             <HardcodedInput
@@ -76,7 +76,7 @@ const RequestStep: FC<RequestStepProps> = ({
       <StepRight>
         <Result
           value={response?.deeplink}
-          label='deeplink'
+          label='Deep Link'
           disabled={!response}
         />
         <JsonResult
