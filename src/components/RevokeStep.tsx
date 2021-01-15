@@ -23,7 +23,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
   disabled = true
 }) => {
   return (
-    <Step header='7. (OPTIONAL) Issuer revokes credential'>
+    <Step header='7. (OPTIONAL) Issuer revokes credential.'>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

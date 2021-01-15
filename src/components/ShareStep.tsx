@@ -5,7 +5,7 @@ import StepLeft from './StepLeft';
 
 const ShareStep: FC = () => {
   return (
-    <Step header='5. Subject uses holder to share presentation' >
+    <Step header='5. Subject uses holder to share presentation.' >
       <StepLeft>
         (User responds to prompts in app.)
       </StepLeft>

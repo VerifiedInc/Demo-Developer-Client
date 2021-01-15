@@ -22,7 +22,7 @@ const UsernameStep: FC<UsernameStepProps> = ({
   handleUsernameChange = noop
 }) => {
   return (
-    <Step header='1. Log In with your username'>
+    <Step header='1. Log in with your username.'>
       <StepLeft>
         <form>
           <Input

@@ -33,7 +33,7 @@ const RequestStep: FC<RequestStepProps> = ({
   response = undefined
 }) => {
   return (
-    <Step header='3. Verifier creates Request'>
+    <Step header='3. Verifier creates request.'>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

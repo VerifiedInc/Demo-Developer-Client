@@ -44,7 +44,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   credential = undefined
 }) => {
   return (
-    <Step header='2. Issue a Credential'>
+    <Step header='2. Issuer issues credential.'>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

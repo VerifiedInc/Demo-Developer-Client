@@ -20,7 +20,7 @@ const VerifyStep: FC<VerifyStepProps> = ({
   isVerified = undefined
 }) => {
   return (
-    <Step header='6. Verifier verifies presentation'>
+    <Step header='6. Verifier verifies presentation.'>
       <StepLeft>
         <HardcodedInput
           inputId='verify-verifier-did'
