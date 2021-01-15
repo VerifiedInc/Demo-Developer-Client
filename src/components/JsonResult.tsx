@@ -10,11 +10,11 @@ export interface JsonResultProps {
 
 const JsonResult: FC<JsonResultProps> = ({
   value = '',
-  placeholder = '-',
+  placeholder = '',
   disabled = false,
   label = ''
 }) => {
-  const className = `result${disabled ? ' disabled' : ''}`;
+  const className = `json-result${disabled ? ' disabled' : ''}`;
   const prettifyValue = () => {
     try {
       const result = JSON.stringify(JSON.parse(value), null, 2);

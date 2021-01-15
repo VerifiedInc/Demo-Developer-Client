@@ -2,6 +2,7 @@ import React, { FC, MouseEventHandler } from 'react';
 
 import Button from './SubmitButton';
 import { noop } from '../utils/noop';
+import './Logout.css';
 
 interface LogoutProps {
   logout: MouseEventHandler;

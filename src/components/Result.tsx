@@ -11,7 +11,7 @@ export interface ResultProps {
 
 const Result: FC<ResultProps> = ({
   value = '',
-  placeholder = '-',
+  placeholder = '',
   disabled = false,
   label = ''
 }) => {

@@ -22,8 +22,8 @@ const VerifyStep: FC<VerifyStepProps> = ({
   const header = '6. Verifier verifies presentation.';
   const description = (
     <>
-      In this step, ypu&apos;ll act as the verifier again.
-      If ypu chose to share data in step 5,
+      In this step, you&apos;ll act as the verifier again.
+      If you chose to share data in step 5,
       you&apos;ll see that data in the presentation autofilled below.
       (A presentation is just a collection of one or more credentials.)
       When you pass the presentation to the Server SDK (done automatically for this demo),
