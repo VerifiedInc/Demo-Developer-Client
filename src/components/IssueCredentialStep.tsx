@@ -13,6 +13,7 @@ import JsonInput from './JsonInput';
 import Result from './Result';
 import JsonResult from './JsonResult';
 import SubmitButton from './SubmitButton';
+import Bold from './Bold';
 import { noop } from '../utils/noop';
 import { Credential, Issuer, User } from '../types';
 
@@ -43,8 +44,16 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   handleSubmit = noop,
   credential = undefined
 }) => {
+  const header = '2. Issuer issues credential.';
+  const description = (
+    <>
+      In this step, you&apos;ll act as an <Bold>issuer</Bold> to send identity data to a user, using our Server SDK.
+      This is called "issuing a credential" &mdash; the credential is stored in the user&apos;s mobile app.
+      The issuer in this demo is ACME Bank.
+    </>
+  );
   return (
-    <Step header='2. Issuer issues credential.'>
+    <Step header={header} description={description}>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

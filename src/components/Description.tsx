@@ -5,7 +5,7 @@ type DescriptionProps = PropsWithChildren<{}>;
 
 const Description: FC<DescriptionProps> = ({ children = null }) => {
   return (
-    <div className='description'>{children}</div>
+    <p className='description'>{children}</p>
   );
 };
 

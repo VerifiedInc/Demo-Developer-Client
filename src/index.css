@@ -23,3 +23,7 @@ code {
 fieldset {
   border: none;
 }
+
+p {
+  margin: 0;
+}

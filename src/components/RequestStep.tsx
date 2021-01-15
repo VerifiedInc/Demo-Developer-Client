@@ -12,6 +12,7 @@ import Result from './Result';
 import JsonResult from './JsonResult';
 import { noop } from '../utils/noop';
 import { PresentationRequestPostResponse } from '../types';
+import Bold from './Bold';
 
 export interface RequestStepProps {
   disabled: boolean;
@@ -32,8 +33,16 @@ const RequestStep: FC<RequestStepProps> = ({
   handleSubmit = noop,
   response = undefined
 }) => {
+  const header = '3. Verifier creates request.';
+  const description = (
+    <>
+      In this step, you&apos;ll act as a <Bold>verifier</Bold> to request identity data from a user.
+      This request prompts the user to share a credential from an Unum ID powered mobile app.
+    </>
+  );
+
   return (
-    <Step header='3. Verifier creates request.'>
+    <Step header={header} description={description}>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

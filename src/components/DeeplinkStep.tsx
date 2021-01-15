@@ -16,8 +16,19 @@ const DeeplinkStep: FC<DeeplinkStepProps> = ({
   qrCodeUrl = '',
   isMobile = false
 }) => {
+  const header = '4. Verifier shares deep link with subject.';
+  const description = (
+    <>
+      In this step, you&apos;ll share the deep link with the subject (user).
+      This is to make sure the deep link gets to the user&apos;s device,
+      so it can open the correct mobile app.
+      Our Verifier SDK presentat the easiest option to the user based on the situation.
+      For example, on desktop, it shows the deep link as a QR code that tue user scans.
+    </>
+  );
+
   return (
-    <Step header='4. Verifier shares deep link with subject.'>
+    <Step header={header} description={description}>
       <StepLeft>
         {
           isMobile
