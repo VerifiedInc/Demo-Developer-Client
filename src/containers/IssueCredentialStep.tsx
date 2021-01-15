@@ -43,7 +43,6 @@ const IssueCredentialStepContainer: FC = () => {
           phoneNumber: '1234567890',
           homeAddress: {
             line1: '98765 Runner Rd.',
-            line2: null,
             city: 'Desert',
             state: 'AZ',
             zip: 12345,
