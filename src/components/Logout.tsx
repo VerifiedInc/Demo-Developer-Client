@@ -5,12 +5,13 @@ import { noop } from '../utils/noop';
 
 interface LogoutProps {
   logout: MouseEventHandler;
+  disabled?: boolean;
 }
 
-const Logout: FC<LogoutProps> = ({ logout = noop }) => {
+const Logout: FC<LogoutProps> = ({ logout = noop, disabled = false }) => {
   return (
     <div className='logout'>
-      <Button onClick={logout} text='Log Out' />
+      <Button onClick={logout} disabled={disabled} text='Log Out' />
     </div>
   );
 };

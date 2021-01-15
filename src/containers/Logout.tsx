@@ -1,10 +1,10 @@
 import React, { FC, MouseEventHandler } from 'react';
 
-import { logoutUser, useUserDispatch } from '../context/user';
+import { logoutUser, useUser } from '../context/user';
 import Logout from '../components/Logout';
 
 const LogoutContainer: FC = () => {
-  const userDispatch = useUserDispatch();
+  const [userState, userDispatch] = useUser();
 
   const logout: MouseEventHandler<HTMLButtonElement> = () => {
     logoutUser(userDispatch);
@@ -12,7 +12,7 @@ const LogoutContainer: FC = () => {
   };
 
   return (
-    <Logout logout={logout} />
+    <Logout logout={logout} disabled={!userState?.user} />
   );
 };
 
