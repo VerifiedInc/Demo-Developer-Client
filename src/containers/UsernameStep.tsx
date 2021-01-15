@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, MouseEventHandler, useState } from 'react';
+import React, { ChangeEvent, FC, MouseEventHandler, useState, useEffect } from 'react';
 
 import UsernameStep from '../components/UsernameStep';
 import { useUser, loginUser } from '../context/user';
@@ -6,6 +6,12 @@ import { useUser, loginUser } from '../context/user';
 const UsernameStepContainer: FC = () => {
   const [username, setUsername] = useState('');
   const [userState, userDispatch] = useUser();
+
+  useEffect(() => {
+    if (!userState?.user) {
+      setUsername('');
+    }
+  }, [userState]);
 
   const { user } = userState;
   const userResult = JSON.stringify({ username: user?.name, did: user?.did });

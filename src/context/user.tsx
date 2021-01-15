@@ -12,7 +12,7 @@ import { User, Action, Dispatch } from '../types';
 export type UserState = { user: User | undefined };
 type UserProviderProps = PropsWithChildren<{}>;
 
-type UserActionTypes = 'SET_USER';
+type UserActionTypes = 'SET_USER' | 'CLEAR_USER';
 export type UserAction = Action<UserActionTypes, User>;
 export type UserDispatch = Dispatch<UserAction>;
 
@@ -23,6 +23,8 @@ export const userReducer = (state: UserState, action: UserAction): UserState => 
   switch (action.type) {
     case 'SET_USER':
       return { ...state, user: action.payload };
+    case 'CLEAR_USER':
+      return { ...state, user: undefined };
     default:
       throw new Error('Unhandled action type in userReducer');
   }
@@ -32,12 +34,25 @@ export const setUser = (dispatch: UserDispatch, user: User): void => {
   dispatch({ type: 'SET_USER', payload: user });
 };
 
+export const clearUser = (dispatch: UserDispatch): void => {
+  dispatch({ type: 'CLEAR_USER' });
+};
+
 export const loginUser = async (dispatch: UserDispatch, username: string): Promise<User> => {
   const userAuthService = client.service('userAuthentication');
   console.log('username', username);
   const result = await userAuthService.create({ strategy: 'user', name: username });
   setUser(dispatch, result.user);
   return result.user;
+};
+
+export const logoutUser = async (dispatch: UserDispatch): Promise<void> => {
+  try {
+    await (client as any).logout();
+    clearUser(dispatch);
+  } catch (e) {
+    console.log('error logging out', e);
+  }
 };
 
 export const UserProvider: FC<UserProviderProps> = ({ children = null }) => {
