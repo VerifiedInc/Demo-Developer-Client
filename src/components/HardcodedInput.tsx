@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 import Input from './Input';
 import { noop } from '../utils/noop';
@@ -8,13 +8,15 @@ export interface HardcodedInputProps {
   type?: string;
   labelText: string;
   value: string;
+  description?: ReactNode;
 }
 
 const HardcodedInput: FC<HardcodedInputProps> = ({
   inputId = '',
   type = 'text',
   labelText = '',
-  value = ''
+  value = '',
+  description = undefined
 }) => {
   return (
     <Input
@@ -24,6 +26,7 @@ const HardcodedInput: FC<HardcodedInputProps> = ({
       value={value}
       labelText={labelText}
       onChange={noop}
+      description={description}
     />
   );
 };

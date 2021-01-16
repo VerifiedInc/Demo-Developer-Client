@@ -52,6 +52,43 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
       The issuer in this demo is ACME Bank.
     </>
   );
+
+  const issuerDidDescription = <>Identifies the issuer in Unum ID. You recieve one when you register an issuer using our Server SDK.</>;
+  const expirationDateDescription = (
+    <>
+      Date after which the credential is no longer valid.
+      In actual usage, this must be an ISO8601 date/time string,
+      but we&apos; using an HTML date input to collect it here.
+    </>
+  );
+
+  const credentialTypeDescription = (
+    <>
+      Type of credential.
+      While any non-empty string is technically a valid credential type,
+      by convention we pick a descriptive name, use CamelCase, and end with 'Credential'.
+    </>
+  );
+
+  const credentialIdDescription = (
+    <>
+      Identifies the credential in Unum ID so you (as the issuer) can revoke it later if necessary.
+      (Note that we <Bold>never</Bold> have access to the raw credential data!
+      The Server SDK encrypts it before sending it to Unum ID.
+      We temporarily store that encrypted version, until the user&apos;s mobile app retrieves it.)
+    </>
+  );
+
+  const credentialDataDescription = <>Any valid JSON. This is the identity data you&apos;re sending to the user.</>;
+
+  const credentialResultDescription = (
+    <>
+      JSON serialization of the full credential object created by our Server SDK.
+      This is then encrypted with the user&apos;s public key before it&apos;s sent to us.
+      This ensures we never have access to the user&apos;s data.
+    </>
+  );
+
   return (
     <Step header={header} description={description}>
       <StepLeft>
@@ -61,6 +98,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               inputId='issuer-did'
               labelText='Issuer DID'
               value={issuer?.did as string}
+              description={issuerDidDescription}
             />
             <Input
               inputId='credential-expiration'
@@ -69,6 +107,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               isEditable
               value={expirationDate}
               onChange={handleExpirationDateChange}
+              description={expirationDateDescription}
             />
             <Input
               inputId='credential-type'
@@ -77,6 +116,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               isEditable
               value={credentialType}
               onChange={handleCredentialTypeChange}
+              description={credentialTypeDescription}
             />
 
             <JsonInput
@@ -85,6 +125,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               isEditable={!!user}
               value={claims}
               onChange={handleClaimsChange}
+              description={credentialDataDescription}
             />
 
             <SubmitButton onClick={handleSubmit} text='Issue Credential' />
@@ -96,11 +137,13 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
           value={credential?.id}
           label='Credential ID'
           disabled={!credential}
+          description={credentialIdDescription}
         />
         <JsonResult
           value={JSON.stringify(credential)}
           label='Credential'
           disabled={!credential}
+          description={credentialResultDescription}
         />
       </StepRight>
     </Step>

@@ -31,6 +31,29 @@ const VerifyStep: FC<VerifyStepProps> = ({
     </>
   );
 
+  const verifierDidDescription = (
+    <>
+      Identifies the verifier in Unum ID.
+      You receive one when you register a verifier using our Server SDK.
+    </>
+  );
+
+  const presentationDescription = (
+    <>
+      Collection of (one or more) credentials you (as the subject) shared in step 5.
+    </>
+  );
+
+  const verifiedDescripiton = (
+    <>
+      Whether this is a valid presentation.
+      It can be invalid for a number of reasons,
+      e.g. if the cryptographic signature is malformed,
+      one or more of the contained credentials has been revoked,
+      the data has been corrupted or altered, etc.
+    </>
+  );
+
   return (
     <Step header={header} description={description}>
       <StepLeft>
@@ -38,11 +61,13 @@ const VerifyStep: FC<VerifyStepProps> = ({
           inputId='verify-verifier-did'
           labelText='Verifier DID'
           value={verifierDid}
+          description={verifierDidDescription}
         />
         <HardcodedJsonInput
           inputId='presentation'
           labelText='Presentation'
           value={JSON.stringify(presentation)}
+          description={presentationDescription}
         />
       </StepLeft>
       <StepRight>
@@ -50,6 +75,7 @@ const VerifyStep: FC<VerifyStepProps> = ({
           value={isVerified}
           label='Verified?'
           disabled={!isVerified}
+          description={verifiedDescripiton}
         />
       </StepRight>
     </Step>

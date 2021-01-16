@@ -1,7 +1,11 @@
-import React, { ChangeEventHandler, FC, useState } from 'react';
+import React, { ChangeEventHandler, FC, ReactNode, useState } from 'react';
 import TextAreaAutosize from 'react-textarea-autosize';
 
 import { noop } from '../utils/noop';
+import Description from './Description';
+import Italic from './Italic';
+import LatoLight from './LatoLight';
+
 import './JsonInput.css';
 
 export interface JsonInputProps {
@@ -11,6 +15,7 @@ export interface JsonInputProps {
   value: string;
   placeholderText?: string;
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
+  description?: ReactNode;
 }
 
 const JsonInput: FC<JsonInputProps> = ({
@@ -19,7 +24,8 @@ const JsonInput: FC<JsonInputProps> = ({
   isEditable = true,
   value = '',
   placeholderText = labelText,
-  onChange = noop
+  onChange = noop,
+  description = undefined
 }) => {
   const [isValid, setIsValid] = useState(true);
   const prettifyValue = () => {
@@ -40,6 +46,7 @@ const JsonInput: FC<JsonInputProps> = ({
     <div className='json-input'>
       <label htmlFor={inputId}>
         <div className='json-input-label'>{labelText}</div>
+        { description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description> }
         <TextAreaAutosize
           className={isValid ? 'valid' : 'invalid'}
           id={inputId}

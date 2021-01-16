@@ -6,6 +6,7 @@ import StepRight from './StepRight';
 import HardcodedInput from './HardcodedInput';
 import SubmitButton from './SubmitButton';
 import JsonResult from './JsonResult';
+import Bold from './Bold';
 import { CredentialStatus } from '../types';
 import { noop } from '../utils/noop';
 
@@ -31,6 +32,23 @@ const RevokeStep: FC<RevokeStepProps> = ({
     </>
   );
 
+  const credentialIdDescription = (
+    <>
+      All you need to revoke a credential is its identifier,
+      though you&apos;ll usually want to store the full credential
+      to make it easier to find the correct identifier.
+    </>
+  );
+
+  const resultDescription = (
+    <>
+      Whether the credential&apos;s status has successfully been changed to revoked.
+      (Note that we <Bold>never</Bold> have access to the raw credential data!
+      The Server SDK encrypts it before sending it to Unum ID.
+      We temporarily store that encrypted version, until the user&apos;s mobile app retrieves it.)
+    </>
+  );
+
   return (
     <Step header={header} description={description}>
       <StepLeft>
@@ -40,6 +58,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
               inputId='credential-id'
               labelText='credential ID'
               value={credentialId}
+              description={credentialIdDescription}
             />
             <SubmitButton
               onClick={handleSubmit}
@@ -53,6 +72,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
           value={JSON.stringify(credentialStatus)}
           label='Result'
           disabled={!credentialStatus}
+          description={resultDescription}
         />
       </StepRight>
     </Step>

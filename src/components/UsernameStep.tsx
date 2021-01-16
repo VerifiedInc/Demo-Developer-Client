@@ -23,7 +23,13 @@ const UsernameStep: FC<UsernameStepProps> = ({
 }) => {
   const header = '1. Log in with your username.';
   const description = 'Enter the username the mobile app generated for you. This login is just a setup step for the demo. You wouldn\'t normally do this when implementing Unum ID.';
-
+  const usernameDescription = <>Identifier internal to your systems. For this demo, the mobile app generates a random one for you. (Type it in here.)</>;
+  const userResultExplanation = (
+    <>
+      As an Unum ID customer, you associate your internal user identifier with a DID (decentralized identifier),
+      which identifies the user in Unum ID.
+    </>
+  );
   return (
     <Step header={header} description={description}>
       <StepLeft>
@@ -34,6 +40,7 @@ const UsernameStep: FC<UsernameStepProps> = ({
             isEditable
             value={username}
             onChange={handleUsernameChange}
+            description={usernameDescription}
           />
           <SubmitButton onClick={handleSubmit} disabled={username.length === 0} text='Log In' />
         </form>
@@ -43,6 +50,7 @@ const UsernameStep: FC<UsernameStepProps> = ({
           value={userResult}
           disabled={!userResult}
           label='Logged In User'
+          description={userResultExplanation}
         />
       </StepRight>
     </Step>
