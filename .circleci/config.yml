@@ -67,7 +67,8 @@ jobs:
             echo Logging in to Amazon ECR...
             $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
             echo Building the Docker image...
-            docker build --build-arg API_URL=<< parameters.api_url >> \
+            DOCKER_BUILDKIT=1 docker build --ssh github="$HOME/.ssh/id_rsa" \
+            --build-arg API_URL=<< parameters.api_url >> \
             --build-arg ISSUER_UUID=<< parameters.issuer_uuid >> \
             --build-arg VERIFIER_UUID=<< parameters.verifier_uuid >> \
             --build-arg HOLDER_APP_UUID=<< parameters.holder_app_uuid >> \
@@ -113,7 +114,8 @@ jobs:
             echo Logging in to Amazon ECR...
             $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
             echo Building the Docker image...
-            docker build --build-arg API_URL=<< parameters.api_url >> \
+            DOCKER_BUILDKIT=1 docker build --ssh github="$HOME/.ssh/id_rsa" \
+            --build-arg API_URL=<< parameters.api_url >> \
             --build-arg ISSUER_UUID=<< parameters.issuer_uuid >> \
             --build-arg VERIFIER_UUID=<< parameters.verifier_uuid >> \
             --build-arg HOLDER_APP_UUID=<< parameters.holder_app_uuid >> \
