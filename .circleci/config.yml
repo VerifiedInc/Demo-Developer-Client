@@ -61,7 +61,7 @@ jobs:
           version: 19.03.13
       - add_ssh_keys:
           fingerprints:
-            - "ae:c4:5c:af:ef:ea:57:12:99:a3:bb:aa:09:e0:57:14"
+            - "5a:69:7f:35:c4:4a:32:59:9b:e7:5f:0e:9c:7f:f1:44"
       - run:
           command: |
             echo Logging in to Amazon ECR...
@@ -108,7 +108,7 @@ jobs:
           version: 19.03.13
       - add_ssh_keys:
           fingerprints:
-            - "ae:c4:5c:af:ef:ea:57:12:99:a3:bb:aa:09:e0:57:14"
+            - "5a:69:7f:35:c4:4a:32:59:9b:e7:5f:0e:9c:7f:f1:44"
       - run:
           command: |
             echo Logging in to Amazon ECR...
