@@ -6804,6 +6804,11 @@ jest-snapshot@^26.6.0, jest-snapshot@^26.6.2:
     pretty-format "^26.6.2"
     semver "^7.3.2"
 
+jest-useragent-mock@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/jest-useragent-mock/-/jest-useragent-mock-0.1.1.tgz#e1ec69a78abd833712a6c0b8ca684b3a59d19c34"
+  integrity sha512-QmgydWl2ITj0xuWQfxj+TmXN0GT2XXxfNhsPzfhNVecjX7VnqLmCKXtr+J5QjT01DDp4+oWIGACdywO6XJlkRg==
+
 jest-util@^26.6.0, jest-util@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-26.6.2.tgz#907535dbe4d5a6cb4c47ac9b926f6af29576cbc1"
@@ -11375,6 +11380,10 @@ vendors@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
+
+"verifier-client-sdk@git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#b977afc41ed15ea21a04d40848817459a9713eaa":
+  version "1.0.0"
+  resolved "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#b977afc41ed15ea21a04d40848817459a9713eaa"
 
 verror@1.10.0:
   version "1.10.0"

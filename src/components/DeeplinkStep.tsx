@@ -1,20 +1,16 @@
 import React, { FC } from 'react';
+import VerifierWidget from 'verifier-client-sdk';
 
 import Step from './Step';
 import StepLeft from './StepLeft';
-import DeeplinkButton from './DeeplinkButton';
-import QrCode from './QrCode';
+import { PresentationRequestPostResponse } from '../types';
 
 export interface DeeplinkStepProps {
-  deeplink?: string;
-  qrCodeUrl?: string;
-  isMobile: boolean;
+  request?: PresentationRequestPostResponse
 }
 
 const DeeplinkStep: FC<DeeplinkStepProps> = ({
-  deeplink = '',
-  qrCodeUrl = '',
-  isMobile = false
+  request = undefined
 }) => {
   const header = '4. Verifier shares deep link with subject.';
   const description = (
@@ -30,11 +26,10 @@ const DeeplinkStep: FC<DeeplinkStepProps> = ({
   return (
     <Step header={header} description={description}>
       <StepLeft>
-        {
-          isMobile
-            ? <DeeplinkButton deeplink={deeplink} />
-            : <QrCode qrCodeUrl={qrCodeUrl} />
-        }
+        <VerifierWidget
+          applicationTitle='Unum ID Developer Demo'
+          presentationRequest={request}
+        />
       </StepLeft>
     </Step>
   );

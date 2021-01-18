@@ -14,6 +14,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "jest-useragent-mock": "^0.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -23,6 +24,7 @@
     "typeface-playfair-display": "^1.1.13",
     "typescript": "^4.0.3",
     "uuid": "^8.3.2",
+    "verifier-client-sdk": "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#b977afc41ed15ea21a04d40848817459a9713eaa",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
