@@ -20,7 +20,7 @@
   border-radius: 5px;
   border: solid 1px #9b9b9b;
   padding-left: 10px;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   overflow-x: scroll;
 }
 
@@ -30,4 +30,12 @@
 
 .result.disabled .result-box {
   background-color: #dcdcdc;
+}
+
+@media (max-width: 1042px) {
+  .result .result-box {
+    width: 96%;
+    max-width: 400px;
+    align-self: center;
+  }
 }
