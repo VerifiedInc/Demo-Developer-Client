@@ -31,3 +31,10 @@
   outline: none;
 }
 
+@media (max-width: 1042px) {
+  .json-input textarea {
+    width: 96%;
+    max-width: 390px;
+    align-self: center;
+  }
+}
