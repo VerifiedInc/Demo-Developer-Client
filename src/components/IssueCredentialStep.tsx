@@ -14,6 +14,7 @@ import Result from './Result';
 import JsonResult from './JsonResult';
 import SubmitButton from './SubmitButton';
 import Bold from './Bold';
+import ErrorMessage from './ErrorMessage';
 import { noop } from '../utils/noop';
 import { Credential, Issuer, User } from '../types';
 
@@ -29,6 +30,8 @@ export interface IssueCredentialStepProps {
   handleClaimsChange: ChangeEventHandler<HTMLTextAreaElement>;
   handleSubmit: MouseEventHandler;
   credential?: Credential;
+  inputErrors?: Record<'expirationDate' | 'credentialType' | 'credentialData', string>;
+  formError?: string;
 }
 
 const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
@@ -42,7 +45,9 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   claims = '',
   handleClaimsChange = noop,
   handleSubmit = noop,
-  credential = undefined
+  credential = undefined,
+  inputErrors = { expirationDate: '', credentialType: '', credentialData: '' },
+  formError = ''
 }) => {
   const header = '2. Issuer issues credential.';
   const description = (
@@ -108,6 +113,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               value={expirationDate}
               onChange={handleExpirationDateChange}
               description={expirationDateDescription}
+              errorMessage={inputErrors.expirationDate}
             />
             <Input
               inputId='credential-type'
@@ -117,6 +123,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               value={credentialType}
               onChange={handleCredentialTypeChange}
               description={credentialTypeDescription}
+              errorMessage={inputErrors.credentialType}
             />
 
             <JsonInput
@@ -126,9 +133,11 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               value={claims}
               onChange={handleClaimsChange}
               description={credentialDataDescription}
+              errorMessage={inputErrors.credentialData}
             />
 
             <SubmitButton onClick={handleSubmit} text='Issue Credential' />
+            <ErrorMessage>{formError}</ErrorMessage>
           </fieldset>
         </form>
       </StepLeft>
