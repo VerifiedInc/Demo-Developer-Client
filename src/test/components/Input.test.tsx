@@ -46,4 +46,10 @@ describe('Input component', () => {
     fireEvent.change(input, { target: { value: 'a' } });
     expect(props.onChange).toBeCalled();
   });
+
+  it('renders the error message if one exists', () => {
+    props.errorMessage = 'test error';
+    wrapper = render(<Input {...props} />);
+    expect(wrapper.getByText('test error')).toBeInTheDocument();
+  });
 });
