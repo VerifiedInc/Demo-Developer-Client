@@ -6,6 +6,7 @@ import { useUser, loginUser } from '../context/user';
 const UsernameStepContainer: FC = () => {
   const [username, setUsername] = useState('');
   const [userState, userDispatch] = useUser();
+  const [inputErrors, setInputErrors] = useState<Record<string, string>>({ username: '' });
 
   useEffect(() => {
     if (!userState?.user) {
@@ -22,8 +23,19 @@ const UsernameStepContainer: FC = () => {
 
   const handleSubmit: MouseEventHandler = async (e): Promise<void> => {
     e.preventDefault();
+
+    if (username.length < 1) {
+      setInputErrors({ ...inputErrors, username: 'required' });
+      return;
+    }
     console.log('username', username);
-    await loginUser(userDispatch, username);
+
+    try {
+      await loginUser(userDispatch, username);
+      setInputErrors({ ...inputErrors, username: '' });
+    } catch (e) {
+      setInputErrors({ ...inputErrors, username: e.message });
+    }
   };
 
   return (
@@ -32,6 +44,7 @@ const UsernameStepContainer: FC = () => {
       handleSubmit={handleSubmit}
       userResult={userResult}
       username={username}
+      inputErrors={inputErrors}
     />
   );
 };
