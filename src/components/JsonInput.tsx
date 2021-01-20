@@ -5,6 +5,7 @@ import { noop } from '../utils/noop';
 import Description from './Description';
 import Italic from './Italic';
 import LatoLight from './LatoLight';
+import ErrorMessage from './ErrorMessage';
 
 import './JsonInput.css';
 
@@ -16,6 +17,7 @@ export interface JsonInputProps {
   placeholderText?: string;
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
   description?: ReactNode;
+  errorMessage?: string;
 }
 
 const JsonInput: FC<JsonInputProps> = ({
@@ -25,7 +27,8 @@ const JsonInput: FC<JsonInputProps> = ({
   value = '',
   placeholderText = labelText,
   onChange = noop,
-  description = undefined
+  description = undefined,
+  errorMessage = ''
 }) => {
   const [isValid, setIsValid] = useState(true);
   const prettifyValue = () => {
@@ -55,6 +58,7 @@ const JsonInput: FC<JsonInputProps> = ({
           placeholder={placeholderText}
           onChange={onChange}
         />
+        <ErrorMessage>{errorMessage}</ErrorMessage>
       </label>
     </div>
   );

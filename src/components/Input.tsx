@@ -5,6 +5,7 @@ import Italic from './Italic';
 import Description from './Description';
 import './Input.css';
 import LatoLight from './LatoLight';
+import ErrorMessage from './ErrorMessage';
 
 export interface InputProps {
   inputId: string;
@@ -15,6 +16,7 @@ export interface InputProps {
   placeholderText?: string;
   description?: ReactNode;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  errorMessage?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -25,7 +27,8 @@ const Input: FC<InputProps> = ({
   value = '',
   placeholderText = labelText,
   description = undefined,
-  onChange = noop
+  onChange = noop,
+  errorMessage = ''
 }) => {
   return (
     <div className='input'>
@@ -40,6 +43,7 @@ const Input: FC<InputProps> = ({
           placeholder={placeholderText}
           onChange={onChange}
         />
+        <ErrorMessage>{errorMessage}</ErrorMessage>
       </label>
     </div>
   );

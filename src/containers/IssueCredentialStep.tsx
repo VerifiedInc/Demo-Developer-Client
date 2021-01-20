@@ -10,6 +10,7 @@ import { useUserState } from '../context/user';
 import { issueCredential, useCredential } from '../context/credential';
 import { useIssuer, getDefaultIssuer } from '../context/issuer';
 import IssueCredentialStep from '../components/IssueCredentialStep';
+import { isValidJson } from '../utils/isValidJson';
 
 const IssueCredentialStepContainer: FC = () => {
   const [credentialState, credentialDispatch] = useCredential();
@@ -21,6 +22,12 @@ const IssueCredentialStepContainer: FC = () => {
   const [expirationDate, setExpirationDate] = useState(oneYearFromNow);
   const [credentialType, setCredentialType] = useState('BankIdentityCredential');
   const [claims, setClaims] = useState('');
+  const [inputErrors, setInputErrors] = useState<Record<string, string>>({
+    credentialType: '',
+    credentialData: '',
+    expirationDate: ''
+  });
+  const [formError, setFormError] = useState('');
 
   useEffect(() => {
     const getIssuer = async () => {
@@ -86,6 +93,34 @@ const IssueCredentialStepContainer: FC = () => {
     if (!userState.user) return;
     if (!issuerState.issuer) return;
 
+    const newInputErrors = { expirationDate: '', credentialType: '', credentialData: '' };
+
+    if (new Date(expirationDate) < new Date()) {
+      newInputErrors.expirationDate = 'Expiration Date must be in the future.';
+    }
+
+    if (!expirationDate) {
+      newInputErrors.expirationDate = 'Expiration Date is required.';
+    }
+
+    if (credentialType.length < 1) {
+      newInputErrors.credentialType = 'Credential Type is required.';
+    }
+
+    if (!isValidJson(claims)) {
+      newInputErrors.credentialData = 'Credential Data must be valid JSON.';
+    }
+
+    if (claims.length < 1) {
+      newInputErrors.credentialData = 'Credential Data is required.';
+    }
+
+    setInputErrors(newInputErrors);
+
+    if (Object.values(newInputErrors).some(v => v !== '')) {
+      return;
+    }
+
     const credentialOptions = {
       userUuid: userState.user.uuid,
       issuerUuid: issuerState.issuer.uuid,
@@ -94,7 +129,13 @@ const IssueCredentialStepContainer: FC = () => {
       claims: JSON.parse(claims)
     };
 
-    await issueCredential(credentialDispatch, credentialOptions);
+    try {
+      await issueCredential(credentialDispatch, credentialOptions);
+      setInputErrors({ credentialData: '', credentialType: '', expirationDate: '' });
+      setFormError('');
+    } catch (e) {
+      setFormError(e.message);
+    }
   };
 
   return (
@@ -110,6 +151,8 @@ const IssueCredentialStepContainer: FC = () => {
       handleClaimsChange={handleClaimsChange}
       credential={credentialState.credential}
       handleSubmit={handleSubmit}
+      inputErrors={inputErrors}
+      formError={formError}
     />
   );
 };

@@ -57,4 +57,10 @@ describe('JsonInput component', () => {
     wrapper = render(<JsonInput {...props} />);
     expect(wrapper.getByDisplayValue('{ "test":')).toBeInTheDocument();
   });
+
+  it('renders the error message if one exists', () => {
+    props.errorMessage = 'test error';
+    wrapper = render(<JsonInput {...props} />);
+    expect(wrapper.getByText('test error')).toBeInTheDocument();
+  });
 });
