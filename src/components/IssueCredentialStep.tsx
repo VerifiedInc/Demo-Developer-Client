@@ -59,6 +59,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   );
 
   const issuerDidDescription = <>Identifies the issuer in Unum ID. You recieve one when you register an issuer using our Server SDK.</>;
+  const subjectDidDescription = <>Identifies the subject (user) in Unum ID. Users receive one when they first use a mobile app powered by Unum ID.</>;
   const expirationDateDescription = (
     <>
       Date after which the credential is no longer valid.
@@ -104,6 +105,12 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               labelText='Issuer DID'
               value={issuer?.did as string}
               description={issuerDidDescription}
+            />
+            <HardcodedInput
+              inputId='subject-did'
+              labelText='Subject DID'
+              value={user?.did as string}
+              description={subjectDidDescription}
             />
             <Input
               inputId='credential-expiration'
