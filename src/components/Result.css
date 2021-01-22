@@ -24,7 +24,7 @@
   overflow-x: scroll;
 }
 
-.result.disabled .result-label {
+.result.disabled {
   color: #9b9b9b;
 }
 
