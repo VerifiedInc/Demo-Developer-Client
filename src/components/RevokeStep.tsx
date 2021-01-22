@@ -26,9 +26,10 @@ const RevokeStep: FC<RevokeStepProps> = ({
   const header = '7. (OPTIONAL) Issuer revokes credential.';
   const description = (
     <>
-      In this step, you&apos;ll act as the issuer again.
+      In this step, you&apos;ll act as the issuer (ACME Bank) again.
       You can (optionally) revoke the credential you issued.
-      You might do this, for example, to issue a new version of the credential.
+      You might do this, for example, to issue a new version of the credential
+      when the user updates their account information.
     </>
   );
 
