@@ -36,8 +36,10 @@ const RequestStep: FC<RequestStepProps> = ({
   const header = '3. Verifier creates request.';
   const description = (
     <>
-      In this step, you&apos;ll act as a <Bold>verifier</Bold> to request identity data from a user.
+      In this step, you&apos;ll act as a <Bold>verifier</Bold> (Hooli FinTech) to request identity data from a user.
       This request prompts the user to share a credential from an Unum ID powered mobile app.
+      You could use this credential, for example, to instantly create a Hooli account for the user
+      rather than making them go through a long manual process.
     </>
   );
 
@@ -54,7 +56,7 @@ const RequestStep: FC<RequestStepProps> = ({
   const issuersDescription = (
     <>
       DIDs (decentralized identifiers) identifying one or more companies you&apos;re willing to accept credentials from.
-      In this example, you&apos;re only willing to accept a credential from the issuer in step 2 above.
+      In this example, you&apos;re only willing to accept a credential from the issuer in step 2 above (ACME Bank).
     </>
   );
 

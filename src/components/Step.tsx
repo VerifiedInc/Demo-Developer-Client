@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren, ReactNode } from 'react';
 import Description from './Description';
+import LatoLight from './LatoLight';
 
 import './Step.css';
 
@@ -16,7 +17,7 @@ const Step: FC<StepProps> = ({
   return (
     <div className='step'>
       <h2 className='step-header'>{header}</h2>
-      { description && <Description>{description}</Description> }
+      { description && <Description><LatoLight>{description}</LatoLight></Description> }
       <div className='step-body'>
         {children}
       </div>
