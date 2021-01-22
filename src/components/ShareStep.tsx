@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import Step from './Step';
+import step5Image from '../assets/step5.png';
 
 const ShareStep: FC = () => {
   const header = '5. Subject uses holder to share presentation.';
@@ -11,7 +12,7 @@ const ShareStep: FC = () => {
     </>
   );
   return (
-    <Step header={header} description={description} />
+    <Step header={header} description={description} image={step5Image} />
   );
 };
 

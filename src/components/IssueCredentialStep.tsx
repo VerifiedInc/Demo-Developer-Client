@@ -18,6 +18,8 @@ import ErrorMessage from './ErrorMessage';
 import { noop } from '../utils/noop';
 import { Credential, Issuer, User } from '../types';
 
+import step2Image from '../assets/step2.png';
+
 export interface IssueCredentialStepProps {
   disabled: boolean;
   issuer?: Issuer;
@@ -96,7 +98,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   );
 
   return (
-    <Step header={header} description={description}>
+    <Step header={header} description={description} image={step2Image}>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>
