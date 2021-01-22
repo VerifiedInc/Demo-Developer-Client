@@ -7,6 +7,7 @@ import HardcodedInput from './HardcodedInput';
 import HardcodedJsonInput from './HardcodedJsonInput';
 import Result from './Result';
 import { Presentation } from '../types';
+import step6Image from '../assets/step6.png';
 
 export interface VerifyStepProps {
   verifierDid?: string;
@@ -55,7 +56,7 @@ const VerifyStep: FC<VerifyStepProps> = ({
   );
 
   return (
-    <Step header={header} description={description}>
+    <Step header={header} description={description} image={step6Image}>
       <StepLeft>
         <HardcodedInput
           inputId='verify-verifier-did'

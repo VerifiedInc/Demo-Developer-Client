@@ -14,6 +14,8 @@ import { noop } from '../utils/noop';
 import { PresentationRequestPostResponse } from '../types';
 import Bold from './Bold';
 
+import step3Image from '../assets/step3.png';
+
 export interface RequestStepProps {
   disabled: boolean;
   verifierDid?: string;
@@ -77,7 +79,7 @@ const RequestStep: FC<RequestStepProps> = ({
   );
 
   return (
-    <Step header={header} description={description}>
+    <Step header={header} description={description} image={step3Image}>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

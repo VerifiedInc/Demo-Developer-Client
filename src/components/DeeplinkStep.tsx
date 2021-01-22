@@ -4,6 +4,7 @@ import VerifierWidget from 'verifier-client-sdk';
 import Step from './Step';
 import StepLeft from './StepLeft';
 import { PresentationRequestPostResponse } from '../types';
+import step4Image from '../assets/step4.png';
 
 export interface DeeplinkStepProps {
   request?: PresentationRequestPostResponse
@@ -24,7 +25,7 @@ const DeeplinkStep: FC<DeeplinkStepProps> = ({
   );
 
   return (
-    <Step header={header} description={description}>
+    <Step header={header} description={description} image={step4Image}>
       <StepLeft>
         <VerifierWidget
           applicationTitle='Unum ID Developer Demo'

@@ -9,6 +9,7 @@ import JsonResult from './JsonResult';
 import Bold from './Bold';
 import { CredentialStatus } from '../types';
 import { noop } from '../utils/noop';
+import step7Image from '../assets/step7.png';
 
 interface RevokeStepProps {
   credentialId?: string;
@@ -51,7 +52,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
   );
 
   return (
-    <Step header={header} description={description}>
+    <Step header={header} description={description} image={step7Image}>
       <StepLeft>
         <form>
           <fieldset disabled={disabled}>

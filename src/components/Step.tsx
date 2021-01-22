@@ -7,17 +7,20 @@ import './Step.css';
 export type StepProps = PropsWithChildren<{
   header: string;
   description?: ReactNode;
+  image?: string;
 }>;
 
 const Step: FC<StepProps> = ({
   children = null,
   header = '',
-  description = null
+  description = null,
+  image = undefined
 }) => {
   return (
     <div className='step'>
       <h2 className='step-header'>{header}</h2>
       { description && <Description><LatoLight>{description}</LatoLight></Description> }
+      { image && <img className='step-banner' src={image} /> }
       <div className='step-body'>
         {children}
       </div>

@@ -1,7 +1,7 @@
 .step {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  max-width: 1100px;
   align-items: space-between;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -33,6 +33,12 @@
   flex-direction: row;
 }
 
+.step-banner {
+  width: 1100px;
+  height: auto;
+  align-self: center;
+}
+
 @media screen and (max-width: 1042px) {
   .step {
     margin-bottom: 20px;
@@ -47,5 +53,9 @@
 
   .step-left {
     margin-bottom: 40px;
+  }
+
+  .step-banner {
+    width: 100%;
   }
 }
