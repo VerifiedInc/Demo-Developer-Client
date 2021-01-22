@@ -14,8 +14,8 @@ const Intro: FC = () => {
       </Description>
       <Description>
         In this demo, you&apos;ll be playing three roles:
-        (1) First you&apos;ll act as ACME Bank to send identity data ot a user,
-        to be store in their ACME mobile app.
+        (1) First you&apos;ll act as ACME Bank to send identity data to a user,
+        to be stored in their ACME mobile app.
         (2) Next, you&apos;ll act as Hooli FinTech to request identity data from the ACME user.
         (3) Lastly, you&apos;ll act as the ACME user to share the requested data with Hooli,
         who will verify that it&apos;s valid.
