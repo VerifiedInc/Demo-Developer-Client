@@ -24,7 +24,7 @@
     "typeface-playfair-display": "^1.1.13",
     "typescript": "^4.0.3",
     "uuid": "^8.3.2",
-    "verifier-client-sdk": "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#b977afc41ed15ea21a04d40848817459a9713eaa",
+    "verifier-client-sdk": "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#f43bb8cbc42dd3fea72658d678005e09c06c3f6d",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
