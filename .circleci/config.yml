@@ -157,6 +157,8 @@ jobs:
         type: string
       deployment:
         type: string
+      namespace:
+        type: string
 
     executor: aws-eks/python3
     steps:
@@ -167,7 +169,7 @@ jobs:
           cluster-name: << parameters.cluster-name >>
       - run:
           command: |
-            kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:sandbox-"${CIRCLE_TAG}"
+            kubectl set image deployment/<< parameters.deployment >> << parameters.deployment >>=${AWS_ECR_URL}/<< parameters.repo >>:sandbox-"${CIRCLE_TAG}" -n << parameters.namespace >>
           name: Update container image
 
 workflows:
@@ -197,6 +199,7 @@ workflows:
           context: AWS-Dev
           repo: demo-developer-client
           deployment: sandbox-demo-developer-client
+          namespace: demos
           filters:
             tags:
               only: /^v.*/
