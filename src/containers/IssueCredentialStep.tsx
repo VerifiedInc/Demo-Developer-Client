@@ -99,6 +99,13 @@ const IssueCredentialStepContainer: FC = () => {
       newInputErrors.expirationDate = 'Expiration Date must be in the future.';
     }
 
+    // validate that expirationDate input is a valid date
+    // some browsers (Safari) don't support input type='date',
+    // so expirationDate may be any string
+    if (isNaN(new Date(expirationDate).getTime())) {
+      newInputErrors.expirationDate = 'Expiration Date is invalid.';
+    }
+
     if (!expirationDate) {
       newInputErrors.expirationDate = 'Expiration Date is required.';
     }
