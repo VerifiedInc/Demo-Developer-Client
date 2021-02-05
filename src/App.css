@@ -3,7 +3,8 @@
   margin-bottom: 100px;
 }
 
-@media screen and (max-width: 1048px) {
+/* small laptop/large tablet (and smaller) */
+@media screen and (max-width: 1200px) {
   .App {
     width: 90%;
     margin: 0 auto;

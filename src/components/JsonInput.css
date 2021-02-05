@@ -31,10 +31,11 @@
   outline: none;
 }
 
-@media (max-width: 1042px) {
+/* small laptop/large tablet (and smaller) */
+@media (max-width: 1200px) {
   .json-input textarea {
     width: 96%;
     max-width: 390px;
-    align-self: center;
+    align-self: flex-start;
   }
 }
