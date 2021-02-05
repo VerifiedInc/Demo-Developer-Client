@@ -39,7 +39,8 @@
   align-self: center;
 }
 
-@media screen and (max-width: 1042px) {
+/* small laptop/large tablet (and smaller) */
+@media (max-width: 1200px) {
   .step {
     margin-bottom: 20px;
   }
@@ -57,5 +58,21 @@
 
   .step-banner {
     width: 100%;
+  }
+}
+
+/* small laptop/large tablet (and smaller) */
+@media (max-width: 1200px) {
+  .step-left fieldset, .step-left form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* large mobile (and smaller) */
+@media (max-width: 500px) {
+  .step-left fieldset, .step-left form {
+    align-items: center;
   }
 }

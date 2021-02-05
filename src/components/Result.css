@@ -32,10 +32,10 @@
   background-color: #dcdcdc;
 }
 
-@media (max-width: 1042px) {
+/* small laptop/large tablet (and smaller) */
+@media (max-width: 1200px) {
   .result .result-box {
     width: 96%;
     max-width: 400px;
-    align-self: center;
   }
 }

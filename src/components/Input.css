@@ -41,10 +41,11 @@
   outline: none;
 }
 
-@media (max-width: 1042px) {
+/* small laptop/large tablet (and smaller) */
+@media (max-width: 1200px) {
   .input input {
     width: 96%;
     max-width: 400px;
-    align-self: center;
+    align-self: flex-start;
   }
 }
