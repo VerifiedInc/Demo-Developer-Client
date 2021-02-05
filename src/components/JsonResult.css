@@ -18,16 +18,12 @@
   width: 490px;
   border-radius: 5px;
   border: solid 1px #9b9b9b;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   text-align: left;
-}
-
-.json-result-box pre {
+  overflow-x: scroll;
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
-  font-weight: normal;
-  overflow-x: scroll;
+  white-space: nowrap;
 }
 
 .json-result.disabled {
