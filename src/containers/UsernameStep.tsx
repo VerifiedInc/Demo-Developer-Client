@@ -15,7 +15,6 @@ const UsernameStepContainer: FC = () => {
   }, [userState]);
 
   const { user } = userState;
-  const userResult = user ? JSON.stringify({ username: user?.name, did: user?.did }) : '';
 
   const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setUsername(e.target.value);
@@ -42,7 +41,7 @@ const UsernameStepContainer: FC = () => {
     <UsernameStep
       handleUsernameChange={handleUsernameChange}
       handleSubmit={handleSubmit}
-      userResult={userResult}
+      userResult={user}
       username={username}
       inputErrors={inputErrors}
     />

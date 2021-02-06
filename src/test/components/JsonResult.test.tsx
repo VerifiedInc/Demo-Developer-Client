@@ -9,7 +9,7 @@ describe('JsonResult component', () => {
 
   beforeEach(() => {
     props = {
-      value: '{ "test": "value" }',
+      value: { test: 'value' },
       placeholder: 'test json result placeholder',
       disabled: false,
       label: 'test json result label'
@@ -27,9 +27,10 @@ describe('JsonResult component', () => {
       normalizer: getDefaultNormalizer({ collapseWhitespace: false })
     })).not.toBeInTheDocument();
 
-    expect(wrapper.getByText('{\n  "test": "value"\n}', {
-      normalizer: getDefaultNormalizer({ collapseWhitespace: false })
-    })).toBeInTheDocument();
+    // unfortunately, there isn't really a better way to test that react-json-view
+    // is displaying the correct values as the json is broken up between lots of different elements
+    expect(wrapper.getByText('test')).toBeInTheDocument();
+    expect(wrapper.getByText(/value/i)).toBeInTheDocument();
   });
 
   it('shows the placeholder when the JsonResult is disabled', () => {
@@ -37,8 +38,7 @@ describe('JsonResult component', () => {
     props.disabled = true;
     wrapper = render(<JsonResult {...props} />);
     expect(wrapper.getByText('test json result placeholder')).toBeInTheDocument();
-    expect(wrapper.queryByText('{\n  "test": "value"\n}', {
-      normalizer: getDefaultNormalizer({ collapseWhitespace: false })
-    })).not.toBeInTheDocument();
+    expect(wrapper.queryByText('test')).not.toBeInTheDocument();
+    expect(wrapper.queryByText(/value/i)).not.toBeInTheDocument();
   });
 });

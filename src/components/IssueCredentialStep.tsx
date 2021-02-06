@@ -158,7 +158,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
           description={credentialIdDescription}
         />
         <JsonResult
-          value={JSON.stringify(credential)}
+          value={credential}
           label='Credential'
           disabled={!credential}
           description={credentialResultDescription}

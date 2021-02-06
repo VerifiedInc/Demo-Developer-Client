@@ -122,7 +122,7 @@ const RequestStep: FC<RequestStepProps> = ({
           description={deeplinkDescription}
         />
         <JsonResult
-          value={JSON.stringify(response)}
+          value={response}
           label='Request'
           disabled={!response}
           description={requestDescription}

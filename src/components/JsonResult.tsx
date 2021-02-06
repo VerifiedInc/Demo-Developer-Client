@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from 'react';
+import ReactJsonView from 'react-json-view';
 
 import Description from './Description';
 import Italic from './Italic';
@@ -6,7 +7,7 @@ import LatoLight from './LatoLight';
 import './JsonResult.css';
 
 export interface JsonResultProps {
-  value?: string;
+  value?: object;
   placeholder?: string;
   disabled?: boolean;
   label: string;
@@ -14,27 +15,36 @@ export interface JsonResultProps {
 }
 
 const JsonResult: FC<JsonResultProps> = ({
-  value = '',
+  value = undefined,
   placeholder = '',
   disabled = false,
   label = '',
   description = undefined
 }) => {
   const className = `json-result${disabled ? ' disabled' : ''}`;
-  const prettifyValue = () => {
-    try {
-      const result = JSON.stringify(JSON.parse(value), null, 2);
-      return result;
-    } catch (e) {
-      return value;
-    }
-  };
+
   return (
     <div className={className}>
       <div className='json-result-label'>{label}</div>
       { description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description> }
       <div className='json-result-box'>
-        <pre className='json-result-value'>{ disabled ? placeholder : prettifyValue() }</pre>
+        {
+          disabled
+            ? placeholder
+            : (
+              value && (
+                <ReactJsonView
+                  src={value}
+                  name={null}
+                  enableClipboard={false}
+                  displayObjectSize={false}
+                  displayDataTypes={false}
+                  collapsed={1}
+                />
+              )
+
+            )
+        }
       </div>
     </div>
   );

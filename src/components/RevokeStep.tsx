@@ -71,7 +71,7 @@ const RevokeStep: FC<RevokeStepProps> = ({
       </StepLeft>
       <StepRight>
         <JsonResult
-          value={JSON.stringify(credentialStatus)}
+          value={credentialStatus}
           label='Result'
           disabled={!credentialStatus}
           description={resultDescription}

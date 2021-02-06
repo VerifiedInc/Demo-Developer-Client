@@ -11,14 +11,14 @@ import { noop } from '../utils/noop';
 export interface UsernameStepProps {
   handleUsernameChange: ChangeEventHandler<HTMLInputElement>;
   handleSubmit: MouseEventHandler;
-  userResult: string;
+  userResult?: object;
   username: string;
   inputErrors?: Record<'username', string>;
 }
 
 const UsernameStep: FC<UsernameStepProps> = ({
   username = '',
-  userResult = '',
+  userResult = undefined,
   handleSubmit = noop,
   handleUsernameChange = noop,
   inputErrors = { username: '' }
