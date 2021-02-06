@@ -37,9 +37,15 @@ export const issueCredential = async (
   credentialOptions: CredentialOptions
 ): Promise<Credential> => {
   const credentialService = client.service('credential');
-  const credential = await credentialService.create(credentialOptions);
-  setCredential(dispatch, credential.credential);
-  return credential;
+  console.log('credentialOptions', credentialOptions);
+  try {
+    const credential = await credentialService.create(credentialOptions);
+    setCredential(dispatch, credential.credential);
+    return credential;
+  } catch (e) {
+    console.log('error creating credential', e);
+    throw e;
+  }
 };
 
 export const CredentialProvider: FC<CredentialProviderProps> = ({ children = null }) => {

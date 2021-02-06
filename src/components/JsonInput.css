@@ -15,7 +15,7 @@
   margin-bottom: 5px;
 }
 
-.json-input textarea {
+/* .json-input textarea {
   min-height: 100px;
   width: 390px;
   font-size: 18px;
@@ -25,6 +25,23 @@
   padding-right: 10px;
   font-family: 'Courier New', Courier, monospace;
   resize: none;
+} */
+
+.json-input-box {
+  min-height: 42px;
+  width: 490px;
+  border-radius: 5px;
+  border: solid 1px #9b9b9b;
+  padding: 10px;
+  text-align: left;
+  overflow-x: scroll;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+}
+
+.json-input-box.disabled {
+  background-color: #dcdcdc;
 }
 
 .json-input textarea:focus {

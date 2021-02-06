@@ -11,7 +11,7 @@ describe('HardcodedJsonInput component', () => {
     props = {
       inputId: 'test-input-id',
       labelText: 'test label',
-      value: '{ "test": "value" }'
+      value: { test: 'value' }
     };
 
     wrapper = render(<HardcodedJsonInput {...props} />);

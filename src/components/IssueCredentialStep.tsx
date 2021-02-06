@@ -19,6 +19,7 @@ import { noop } from '../utils/noop';
 import { Credential, Issuer, User } from '../types';
 
 import step2Image from '../assets/step2.png';
+import { InteractionProps } from 'react-json-view';
 
 export interface IssueCredentialStepProps {
   disabled: boolean;
@@ -28,8 +29,10 @@ export interface IssueCredentialStepProps {
   credentialType: string;
   handleCredentialTypeChange: ChangeEventHandler<HTMLInputElement>;
   user?: User;
-  claims: string;
-  handleClaimsChange: ChangeEventHandler<HTMLTextAreaElement>;
+  claims: any;
+  handleEditClaims: (edit: InteractionProps) => any;
+  handleAddClaim?: (edit: InteractionProps) => any;
+  handleDeleteClaim?: (edit: InteractionProps) => any;
   handleSubmit: MouseEventHandler;
   credential?: Credential;
   inputErrors?: Record<'expirationDate' | 'credentialType' | 'credentialData', string>;
@@ -44,13 +47,16 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
   credentialType = '',
   handleCredentialTypeChange = noop,
   user = undefined,
-  claims = '',
-  handleClaimsChange = noop,
+  claims = {},
+  handleEditClaims = noop,
+  handleAddClaim = noop,
+  handleDeleteClaim = noop,
   handleSubmit = noop,
   credential = undefined,
   inputErrors = { expirationDate: '', credentialType: '', credentialData: '' },
   formError = ''
 }) => {
+  console.log('claims', claims);
   const header = '2. Issuer issues credential.';
   const description = (
     <>
@@ -140,7 +146,7 @@ const IssueCredentialStep: FC<IssueCredentialStepProps> = ({
               labelText='Credential Data'
               isEditable={!!user}
               value={claims}
-              onChange={handleClaimsChange}
+              onEdit={handleEditClaims}
               description={credentialDataDescription}
               errorMessage={inputErrors.credentialData}
             />

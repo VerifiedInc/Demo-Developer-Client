@@ -1,19 +1,19 @@
 import React, { FC, ReactNode } from 'react';
 
 import JsonInput from './JsonInput';
-import { noop } from '../utils/noop';
+// import { noop } from '../utils/noop';
 
 export interface HardcodedJsonInputProps {
   inputId: string;
   labelText: string;
-  value: string;
+  value?: any;
   description?: ReactNode;
 }
 
 const HardcodedJsonInput: FC<HardcodedJsonInputProps> = ({
   inputId = '',
   labelText = '',
-  value = '',
+  value = undefined,
   description = undefined
 }) => {
   return (
@@ -21,7 +21,7 @@ const HardcodedJsonInput: FC<HardcodedJsonInputProps> = ({
       inputId={inputId}
       labelText={labelText}
       value={value}
-      onChange={noop}
+      onEdit={false}
       isEditable={false}
       description={description}
     />

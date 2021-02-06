@@ -10,7 +10,8 @@ import { useUserState } from '../context/user';
 import { issueCredential, useCredential } from '../context/credential';
 import { useIssuer, getDefaultIssuer } from '../context/issuer';
 import IssueCredentialStep from '../components/IssueCredentialStep';
-import { isValidJson } from '../utils/isValidJson';
+// import { isValidJson } from '../utils/isValidJson';
+import { InteractionProps } from 'react-json-view';
 
 const IssueCredentialStepContainer: FC = () => {
   const [credentialState, credentialDispatch] = useCredential();
@@ -21,7 +22,7 @@ const IssueCredentialStepContainer: FC = () => {
   const oneYearFromNow = new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000).toISOString().substr(0, 10);
   const [expirationDate, setExpirationDate] = useState(oneYearFromNow);
   const [credentialType, setCredentialType] = useState('BankIdentityCredential');
-  const [claims, setClaims] = useState('');
+  const [claims, setClaims] = useState({});
   const [inputErrors, setInputErrors] = useState<Record<string, string>>({
     credentialType: '',
     credentialData: '',
@@ -69,7 +70,7 @@ const IssueCredentialStepContainer: FC = () => {
         },
         confidence: '99%'
       };
-      setClaims(JSON.stringify(demoClaims));
+      setClaims(demoClaims);
     } else {
       setClaims('');
     }
@@ -83,8 +84,12 @@ const IssueCredentialStepContainer: FC = () => {
     setCredentialType(e.target.value);
   };
 
-  const handleClaimsChange = (e: ChangeEvent<HTMLTextAreaElement>): void => {
-    setClaims(e.target.value);
+  const handleEditClaims = (edit: InteractionProps): void => {
+    // setClaims(e.target.value);
+    console.log('edit', edit);
+
+    const { updated_src: updatedSrc } = edit;
+    setClaims(updatedSrc);
   };
 
   const handleSubmit: MouseEventHandler = async (e): Promise<void> => {
@@ -114,11 +119,7 @@ const IssueCredentialStepContainer: FC = () => {
       newInputErrors.credentialType = 'Credential Type is required.';
     }
 
-    if (!isValidJson(claims)) {
-      newInputErrors.credentialData = 'Credential Data must be valid JSON.';
-    }
-
-    if (claims.length < 1) {
+    if (Object.keys(claims).length < 1) {
       newInputErrors.credentialData = 'Credential Data is required.';
     }
 
@@ -133,7 +134,7 @@ const IssueCredentialStepContainer: FC = () => {
       issuerUuid: issuerState.issuer.uuid,
       type: credentialType,
       expirationDate: new Date(expirationDate),
-      claims: JSON.parse(claims)
+      claims: claims
     };
 
     try {
@@ -155,7 +156,9 @@ const IssueCredentialStepContainer: FC = () => {
       handleCredentialTypeChange={handleCredentialTypeChange}
       user={userState.user}
       claims={claims}
-      handleClaimsChange={handleClaimsChange}
+      handleEditClaims={handleEditClaims}
+      handleDeleteClaim={handleEditClaims}
+      handleAddClaim={handleEditClaims}
       credential={credentialState.credential}
       handleSubmit={handleSubmit}
       inputErrors={inputErrors}
