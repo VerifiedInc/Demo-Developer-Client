@@ -49,7 +49,7 @@ jobs:
         default: "d14ca24c-5323-4b79-9dfa-6471b014d68c"
       verifier_uuid:
         type: string
-        default: "e0bd4b5a-e98a-4f22-be2f-d560e4c633e1"
+        default: "c1bbf50a-7bf8-4dbb-a450-6518e3f20747"
       holder_app_uuid:
         type: string
         default: "91514d8e-b5b2-41d9-9744-3cbb2bb9a85d"
