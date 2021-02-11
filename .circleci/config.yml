@@ -96,7 +96,7 @@ jobs:
         default: "ba63eef3-58e7-4964-bd62-75948de5fa67"
       verifier_uuid:
         type: string
-        default: "5dfd0c17-426e-4d1f-9384-e12eb98c9d12"
+        default: "ccc5a558-a943-4c99-ba33-38fe600246db"
       holder_app_uuid:
         type: string
         default: "5b4895e7-edc1-4f22-bff3-c44bb5ae48db"
