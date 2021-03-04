@@ -43,7 +43,7 @@ jobs:
         type: string
       api_url:
         type: string
-        default: "https://customer-api.dev-unumid.org"
+        default: "https://developer-api.demo.dev-unum.id"
       issuer_uuid:
         type: string
         default: "d14ca24c-5323-4b79-9dfa-6471b014d68c"
@@ -238,7 +238,7 @@ workflows:
       - deploy-image:
           context: AWS-Dev
           repo: demo-developer-client
-          deployment: dev-demo-developer-client
+          deployment: demo-developer-client
           requires:
             - build-and-push-image
           filters:
