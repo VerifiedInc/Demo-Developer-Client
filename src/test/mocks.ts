@@ -157,6 +157,5 @@ export const dummyNoPresentation: NoPresentation = {
 };
 
 export const dummyCredentialStatus: CredentialStatus = {
-  credentialId: dummyCredential.id,
-  status: 'valid'
+  statusCode: 200
 };

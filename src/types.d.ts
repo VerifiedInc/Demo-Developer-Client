@@ -155,6 +155,5 @@ export interface NoPresentationResponse {
 export type PresentationOrNoPresentationResponse = PresentationResponse | NoPresentationResponse;
 
 export interface CredentialStatus {
-  credentialId: string;
-  status: 'valid' | 'revoked';
+  statusCode: 200
 }
