@@ -42,7 +42,8 @@ export const revokeCredential = async (
     credentialId,
     { issuerUuid, status: 'revoked' }
   );
-  setCredentialStatus(dispatch, credentialStatus);
+
+  setCredentialStatus(dispatch, { statusCode: 200 });
   return credentialStatus;
 };
 
