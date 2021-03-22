@@ -2073,6 +2073,10 @@
     "@typescript-eslint/types" "4.12.0"
     eslint-visitor-keys "^2.0.0"
 
+"@unumid/web-sdk@git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#v0.2.2":
+  version "1.0.0"
+  resolved "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#94efc50416285568a727be448bb6ee18af3154c9"
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"
@@ -11489,10 +11493,6 @@ vendors@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
-
-"verifier-client-sdk@git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#f43bb8cbc42dd3fea72658d678005e09c06c3f6d":
-  version "1.0.0"
-  resolved "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#f43bb8cbc42dd3fea72658d678005e09c06c3f6d"
 
 verror@1.10.0:
   version "1.10.0"

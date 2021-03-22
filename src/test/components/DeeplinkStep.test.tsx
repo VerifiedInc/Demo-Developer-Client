@@ -11,7 +11,8 @@ describe('Deeplink step component', () => {
 
   beforeEach(() => {
     props = {
-      request: dummyPresentationRequestPostResponse
+      request: dummyPresentationRequestPostResponse,
+      createPresentationRequest: jest.fn()
     };
 
     wrapper = render(<DeeplinkStep {...props} />);
@@ -26,7 +27,7 @@ describe('Deeplink step component', () => {
     wrapper.unmount();
     mockUserAgent('iPhone');
     wrapper = render(<DeeplinkStep {...props} />);
-    const link = wrapper.getByText('Continue with Unum ID Developer Demo App');
+    const link = wrapper.getByAltText('Verify with Unum ID Developer Demo');
     expect(link).toBeInTheDocument();
     clearMockUserAgent();
   });
