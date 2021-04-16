@@ -1,3 +1,4 @@
+import { NoPresentation, Presentation } from '@unumid/types';
 import { v4 } from 'uuid';
 import {
   User,
@@ -6,8 +7,6 @@ import {
   Credential,
   HolderApp,
   PresentationRequestPostResponse,
-  Presentation,
-  NoPresentation,
   CredentialStatus
 } from '../types';
 
@@ -127,7 +126,7 @@ export const dummyPresentation: Presentation = {
   type: [
     'VerifiablePresentation'
   ],
-  verifiableCredential: [
+  verifiableCredentials: [
     dummyCredential
   ],
   presentationRequestUuid: dummyPresentationRequestPostResponse.presentationRequest.uuid,

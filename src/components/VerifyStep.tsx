@@ -6,7 +6,7 @@ import StepRight from './StepRight';
 import HardcodedInput from './HardcodedInput';
 import HardcodedJsonInput from './HardcodedJsonInput';
 import Result from './Result';
-import { Presentation } from '../types';
+import { Presentation } from '@unumid/types';
 import step6Image from '../assets/step6.png';
 
 export interface VerifyStepProps {

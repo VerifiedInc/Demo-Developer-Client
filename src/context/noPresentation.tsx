@@ -6,7 +6,8 @@ import React, {
   PropsWithChildren
 } from 'react';
 
-import { NoPresentation, Action, Dispatch } from '../types';
+import { Action, Dispatch } from '../types';
+import { NoPresentation } from '@unumid/types';
 
 export type NoPresentationState = { noPresentation: NoPresentation | undefined };
 type NoPresentationProviderProps = PropsWithChildren<{}>;

@@ -15,6 +15,8 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@unumid/web-sdk": "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#v0.2.2",
+    "@unumid/demo-types": "git+ssh://git@github.com/UnumID/demo-types#v0.4.2",
+    "@unumid/types": "git+ssh://git@github.com/UnumID/types.git#v1.2.1",
     "jest-useragent-mock": "^0.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
