@@ -1,3 +1,4 @@
+import { NoPresentation } from '@unumid/types';
 export interface User {
   uuid: string;
   createdAt: Date;
