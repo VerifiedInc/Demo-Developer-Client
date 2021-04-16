@@ -1,3 +1,4 @@
+import { Presentation } from '@unumid/types';
 import React, {
   createContext,
   useContext,
@@ -6,7 +7,7 @@ import React, {
   PropsWithChildren
 } from 'react';
 
-import { Presentation, Action, Dispatch } from '../types';
+import { Action, Dispatch } from '../types';
 
 export type PresentationState = { presentation: Presentation | undefined, isVerified: boolean | undefined };
 type PresentationProviderProps = PropsWithChildren<{}>;

@@ -1,3 +1,4 @@
+import { NoPresentation } from '@unumid/types';
 export interface User {
   uuid: string;
   createdAt: Date;
@@ -105,22 +106,6 @@ export interface PresentationRequestPostResponse {
   };
   deeplink: string;
   qrCode: string;
-}
-
-export interface Presentation {
-  '@context': ['https://www.w3.org/2018/credentials/v1', ...string[]];
-  uuid: string;
-  type: ['VerifiablePresentation', ...string[]];
-  verifiableCredential: Credential[];
-  proof: Proof;
-  presentationRequestUuid: string;
-}
-
-export interface NoPresentation {
-  presentationRequestUuid: string;
-  holder: string;
-  proof: Proof;
-  type: ['NoPresentation', ('Declination' | 'Report' | 'NoPresentation')?];
 }
 
 export interface CredentialOptions {

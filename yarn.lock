@@ -2073,6 +2073,18 @@
     "@typescript-eslint/types" "4.12.0"
     eslint-visitor-keys "^2.0.0"
 
+"@unumid/demo-types@git+ssh://git@github.com/UnumID/demo-types#v0.4.2":
+  version "0.0.1"
+  resolved "git+ssh://git@github.com/UnumID/demo-types#5e6a88e089e6fc7fb876327946249325a40d7b6b"
+  dependencies:
+    "@unumid/types" "git+ssh://git@github.com/UnumID/types.git#v1.2.1"
+
+"@unumid/types@git+ssh://git@github.com/UnumID/types.git#v1.2.1":
+  version "0.0.1"
+  resolved "git+ssh://git@github.com/UnumID/types.git#b8d350a9e97b7e9e23b70eaea62a136fecd3c136"
+  dependencies:
+    runtypes "^6.0.0"
+
 "@unumid/web-sdk@git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#v0.2.2":
   version "1.0.0"
   resolved "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#94efc50416285568a727be448bb6ee18af3154c9"
@@ -10022,6 +10034,11 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   integrity sha1-6Eg5bwV9Ij8kOGkkYY4laUFh7Ec=
   dependencies:
     aproba "^1.1.1"
+
+runtypes@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/runtypes/-/runtypes-6.0.0.tgz#0010e7e050a41d4ab38b6138051dfb8774a53f07"
+  integrity sha512-hVBZ2S0i9MmyViSpwCU7TGFuEZxjPIeTMbhCpz59/8C3IGbPL6N03bIVALGfVWZQ+MTXORjWpWnZUP3hPyw96w==
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
