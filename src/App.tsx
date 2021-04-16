@@ -33,7 +33,7 @@ function App () {
   const noPresentationDispatch = useNoPresentationDispatch();
 
   useEffect(() => {
-    const presentationService = client.service('presentation');
+    const presentationService = client.service('presentationWebsocket');
     presentationService.on('created', (response: DemoPresentationDto | DemoNoPresentationDto) => {
       console.log('on presentation created', response);
       if (isDemoPresentationDto(response)) {

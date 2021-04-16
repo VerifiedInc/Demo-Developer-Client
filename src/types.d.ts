@@ -108,22 +108,6 @@ export interface PresentationRequestPostResponse {
   qrCode: string;
 }
 
-// export interface Presentation {
-//   '@context': ['https://www.w3.org/2018/credentials/v1', ...string[]];
-//   uuid: string;
-//   type: ['VerifiablePresentation', ...string[]];
-//   verifiableCredential: Credential[];
-//   proof: Proof;
-//   presentationRequestUuid: string;
-// }
-
-// export interface NoPresentation {
-//   presentationRequestUuid: string;
-//   holder: string;
-//   proof: Proof;
-//   type: ['NoPresentation', ('Declination' | 'Report' | 'NoPresentation')?];
-// }
-
 export interface CredentialOptions {
   userUuid: string;
   issuerUuid: string;
