@@ -8,7 +8,7 @@ import { useVerifier, getDefaultVerifier } from '../context/verifier';
 import { useHolderApp, getDefaultHolderApp } from '../context/holderApp';
 import { useIssuerState } from '../context/issuer';
 import { useUserState } from '../context/user';
-import { usePresentationRequestPostResponse, sendRequest } from '../context/presentationRequestPostResponse';
+import { usePresentationRequestPostDto, sendRequest } from '../context/presentationRequestPostDto';
 import { useCredentialState } from '../context/credential';
 import RequestStep from '../components/RequestStep';
 
@@ -18,7 +18,7 @@ const RequestStepContainer: FC = () => {
   const issuerState = useIssuerState();
   const userState = useUserState();
   const credentialState = useCredentialState();
-  const [requestState, requestDispatch] = usePresentationRequestPostResponse();
+  const [requestState, requestDispatch] = usePresentationRequestPostDto();
 
   const disabled = !userState.user ||
     !issuerState.issuer ||
@@ -62,7 +62,7 @@ const RequestStepContainer: FC = () => {
       verifierDid={verifierState.verifier?.did}
       holderAppUuid={holderAppState.holderApp?.uuid}
       issuers={issuerState.issuer ? [issuerState.issuer?.did] : []}
-      response={requestState.presentationRequestPostResponse}
+      response={requestState.presentationRequestPostDto}
       handleSubmit={handleSubmit}
       credentialType={credentialState.credential?.type[1]}
     />

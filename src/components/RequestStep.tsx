@@ -2,6 +2,7 @@ import React, {
   FC,
   MouseEventHandler
 } from 'react';
+import { PresentationRequestPostDto } from '@unumid/types';
 
 import Step from './Step';
 import StepLeft from './StepLeft';
@@ -11,7 +12,6 @@ import SubmitButton from './SubmitButton';
 import Result from './Result';
 import JsonResult from './JsonResult';
 import { noop } from '../utils/noop';
-import { PresentationRequestPostResponse } from '../types';
 import Bold from './Bold';
 
 import step3Image from '../assets/step3.png';
@@ -23,7 +23,7 @@ export interface RequestStepProps {
   issuers: string[];
   credentialType?: string;
   handleSubmit: MouseEventHandler;
-  response?: PresentationRequestPostResponse;
+  response?: PresentationRequestPostDto;
 }
 
 const RequestStep: FC<RequestStepProps> = ({

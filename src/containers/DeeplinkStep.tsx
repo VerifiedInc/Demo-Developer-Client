@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { usePresentationRequestPostResponse, sendRequest } from '../context/presentationRequestPostResponse';
+import { usePresentationRequestPostDto, sendRequest } from '../context/presentationRequestPostDto';
 import { useVerifierState } from '../context/verifier';
 import { useIssuerState } from '../context/issuer';
 import { useHolderAppState } from '../context/holderApp';
@@ -10,7 +10,7 @@ import { useUserState } from '../context/user';
 import DeeplinkStep from '../components/DeeplinkStep';
 
 const DeeplinkStepContainer: FC = () => {
-  const [{ presentationRequestPostResponse }, requestDispatch] = usePresentationRequestPostResponse();
+  const [{ presentationRequestPostDto }, requestDispatch] = usePresentationRequestPostDto();
   const verifierState = useVerifierState();
   const issuerState = useIssuerState();
   const holderAppState = useHolderAppState();
@@ -34,7 +34,7 @@ const DeeplinkStepContainer: FC = () => {
 
   return (
     <DeeplinkStep
-      request={presentationRequestPostResponse}
+      request={presentationRequestPostDto}
       createPresentationRequest={createPresentationRequest}
     />
   );

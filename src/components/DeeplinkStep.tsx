@@ -1,14 +1,13 @@
 import React, { FC } from 'react';
-import VerifierWidget from '@unumid/web-sdk';
+import UnumIDWidget from '@unumid/react-web-sdk';
+import { PresentationRequestPostDto } from '@unumid/types';
 
 import Step from './Step';
 import StepLeft from './StepLeft';
-import { PresentationRequestPostResponse } from '../types';
 import step4Image from '../assets/step4.png';
-import buttonImage from '../assets/verify-with-app@2x.png';
 
 export interface DeeplinkStepProps {
-  request?: PresentationRequestPostResponse
+  request?: PresentationRequestPostDto
   createPresentationRequest: () => Promise<any>
 }
 
@@ -30,12 +29,12 @@ const DeeplinkStep: FC<DeeplinkStepProps> = ({
   return (
     <Step header={header} description={description} image={step4Image}>
       <StepLeft>
-        <VerifierWidget
-          applicationTitle='Unum ID Developer Demo'
+        <UnumIDWidget
+          env={process.env.NODE_ENV === 'development' ? 'development' : 'sandbox'}
+          apiKey={process.env.REACT_APP_API_KEY as string}
           presentationRequest={request}
           createPresentationRequest={createPresentationRequest}
           createInitialPresentationRequest={false}
-          deeplinkImgSrc={buttonImage}
         />
       </StepLeft>
     </Step>

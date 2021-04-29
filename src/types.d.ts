@@ -98,16 +98,6 @@ export interface IssuerInfo {
   did: string;
 }
 
-export interface PresentationRequestPostResponse {
-  presentationRequest: PresentationRequest;
-  verifier: VerifierInfo;
-  issuers: {
-    [did: string]: IssuerInfo
-  };
-  deeplink: string;
-  qrCode: string;
-}
-
 export interface CredentialOptions {
   userUuid: string;
   issuerUuid: string;
