@@ -50,9 +50,6 @@ jobs:
       verifier_uuid:
         type: string
         default: "c1bbf50a-7bf8-4dbb-a450-6518e3f20747"
-      holder_app_uuid:
-        type: string
-        default: "91514d8e-b5b2-41d9-9744-3cbb2bb9a85d"
 
     steps:
       - checkout
@@ -71,7 +68,7 @@ jobs:
             --build-arg API_URL=<< parameters.api_url >> \
             --build-arg ISSUER_UUID=<< parameters.issuer_uuid >> \
             --build-arg VERIFIER_UUID=<< parameters.verifier_uuid >> \
-            --build-arg HOLDER_APP_UUID=<< parameters.holder_app_uuid >> \
+            --build-arg HOLDER_APP_UUID=${DEV_HOLDER_APP_UUID} \
             --build-arg API_KEY=${DEV_API_KEY} \
             -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-latest
@@ -98,9 +95,6 @@ jobs:
       verifier_uuid:
         type: string
         default: "ccc5a558-a943-4c99-ba33-38fe600246db"
-      holder_app_uuid:
-        type: string
-        default: "5b4895e7-edc1-4f22-bff3-c44bb5ae48db"
 
     steps:
       - checkout
@@ -119,7 +113,7 @@ jobs:
             --build-arg API_URL=<< parameters.api_url >> \
             --build-arg ISSUER_UUID=<< parameters.issuer_uuid >> \
             --build-arg VERIFIER_UUID=<< parameters.verifier_uuid >> \
-            --build-arg HOLDER_APP_UUID=<< parameters.holder_app_uuid >> \
+            --build-arg HOLDER_APP_UUID=${SANDBOX_HOLDER_APP_UUID} \
             --build-arg API_KEY=${SANDBOX_API_KEY} \
             -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:sandbox-latest
