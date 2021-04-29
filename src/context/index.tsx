@@ -4,7 +4,7 @@ import { UserProvider } from './user';
 import { IssuerProvider } from './issuer';
 import { VerifierProvider } from './verifier';
 import { HolderAppProvider } from './holderApp';
-import { PresentationRequestPostResponseProvider } from './presentationRequestPostResponse';
+import { PresentationRequestPostDtoProvider } from './presentationRequestPostDto';
 import { PresentationProvider } from './presentation';
 import { NoPresentationProvider } from './noPresentation';
 import { CredentialProvider } from './credential';
@@ -19,13 +19,13 @@ export const Provider: FC<ProviderProps> = ({ children = null }) => (
         <HolderAppProvider>
           <CredentialProvider>
             <CredentialStatusProvider>
-              <PresentationRequestPostResponseProvider>
+              <PresentationRequestPostDtoProvider>
                 <PresentationProvider>
                   <NoPresentationProvider>
                     {children}
                   </NoPresentationProvider>
                 </PresentationProvider>
-              </PresentationRequestPostResponseProvider>
+              </PresentationRequestPostDtoProvider>
             </CredentialStatusProvider>
           </CredentialProvider>
         </HolderAppProvider>

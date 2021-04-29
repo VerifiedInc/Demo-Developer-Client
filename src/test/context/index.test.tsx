@@ -6,7 +6,7 @@ import { useIssuer } from '../../context/issuer';
 import { useVerifier } from '../../context/verifier';
 import { useUser } from '../../context/user';
 import { useHolderApp } from '../../context/holderApp';
-import { usePresentationRequestPostResponse } from '../../context/presentationRequestPostResponse';
+import { usePresentationRequestPostDto } from '../../context/presentationRequestPostDto';
 import { usePresentation } from '../../context/presentation';
 import { useNoPresentation } from '../../context/noPresentation';
 import { useCredentialStatus } from '../../context/credentialStatus';
@@ -24,7 +24,7 @@ describe('app context', () => {
         useVerifier();
         useUser();
         useHolderApp();
-        usePresentationRequestPostResponse();
+        usePresentationRequestPostDto();
         usePresentation();
         useNoPresentation();
         useCredentialStatus();

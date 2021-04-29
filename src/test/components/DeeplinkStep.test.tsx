@@ -3,7 +3,7 @@ import { render, RenderResult } from '@testing-library/react';
 import { clear as clearMockUserAgent, mockUserAgent } from 'jest-useragent-mock';
 
 import DeeplinkStep, { DeeplinkStepProps } from '../../components/DeeplinkStep';
-import { dummyPresentationRequestPostResponse } from '../mocks';
+import { dummyPresentationRequestPostDto } from '../mocks';
 
 describe('Deeplink step component', () => {
   let props: DeeplinkStepProps;
@@ -11,7 +11,7 @@ describe('Deeplink step component', () => {
 
   beforeEach(() => {
     props = {
-      request: dummyPresentationRequestPostResponse,
+      request: dummyPresentationRequestPostDto,
       createPresentationRequest: jest.fn()
     };
 

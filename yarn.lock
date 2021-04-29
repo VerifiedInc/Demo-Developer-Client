@@ -2073,21 +2073,23 @@
     "@typescript-eslint/types" "4.12.0"
     eslint-visitor-keys "^2.0.0"
 
-"@unumid/demo-types@git+ssh://git@github.com/UnumID/demo-types#v0.4.2":
+"@unumid/demo-types@git+ssh://git@github.com/UnumID/demo-types#v0.5.0":
   version "0.0.1"
-  resolved "git+ssh://git@github.com/UnumID/demo-types#5e6a88e089e6fc7fb876327946249325a40d7b6b"
+  resolved "git+ssh://git@github.com/UnumID/demo-types#69587e7790cd897ca85bfd089d67a7c91de8e43e"
   dependencies:
-    "@unumid/types" "git+ssh://git@github.com/UnumID/types.git#v1.2.1"
+    "@unumid/types" "git+ssh://git@github.com/UnumID/types.git#1.5.0"
 
-"@unumid/types@git+ssh://git@github.com/UnumID/types.git#v1.2.1":
-  version "0.0.1"
-  resolved "git+ssh://git@github.com/UnumID/types.git#b8d350a9e97b7e9e23b70eaea62a136fecd3c136"
+"@unumid/react-web-sdk@git+ssh://git@github.com/UnumID/react-web-sdk.git#v1.0.11":
+  version "1.0.11"
+  resolved "git+ssh://git@github.com/UnumID/react-web-sdk.git#549d415c486f5eec941202d581eabb7b46d1dfbc"
+  dependencies:
+    axios "^0.21.1"
+
+"@unumid/types@git+ssh://git@github.com/UnumID/types.git#1.5.0", "@unumid/types@git+ssh://git@github.com/UnumID/types.git#v1.5.0":
+  version "1.5.0"
+  resolved "git+ssh://git@github.com/UnumID/types.git#ed25da7c28fa6a3de2e242442e9d512e1b0875d2"
   dependencies:
     runtypes "^6.0.0"
-
-"@unumid/web-sdk@git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#v0.2.2":
-  version "1.0.0"
-  resolved "git+ssh://git@github.com/UnumID/Verifier-Client-SDK.git#94efc50416285568a727be448bb6ee18af3154c9"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -2634,6 +2636,13 @@ axe-core@^4.0.2:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.1.tgz#70a7855888e287f7add66002211a423937063eaf"
   integrity sha512-5Kgy8Cz6LPC9DJcNb3yjAXTu3XihQgEdnIg50c//zOC/MyLP0Clg+Y8Sh9ZjjnvBrDZU4DgXS9C3T9r4/scGZQ==
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -5343,6 +5352,11 @@ follow-redirects@^1.0.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
   integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
+
+follow-redirects@^1.10.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.0.tgz#f5d260f95c5f8c105894491feee5dc8993b402fe"
+  integrity sha512-0vRwd7RKQBTt+mgu87mtYeofLFZpTas2S9zY+jIeuLJMNvudIgF52nr19q40HOwH5RrhWIPuj9puybzSJiRrVg==
 
 for-in@^1.0.2:
   version "1.0.2"
