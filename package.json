@@ -14,7 +14,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
-    "@unumid/react-web-sdk": "git+ssh://git@github.com/UnumID/react-web-sdk.git#v1.0.11",
+    "@unumid/web-sdk-react": "git+ssh://git@github.com/UnumID/web-sdk-react.git#v1.1.2",
     "@unumid/demo-types": "git+ssh://git@github.com/UnumID/demo-types#v0.5.0",
     "@unumid/types": "git+ssh://git@github.com/UnumID/types.git#v1.5.0",
     "jest-useragent-mock": "^0.1.1",

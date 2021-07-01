@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import UnumIDWidget from '@unumid/react-web-sdk';
+import UnumIDWidget from '@unumid/web-sdk-react';
 import { PresentationRequestPostDto } from '@unumid/types';
 
 import Step from './Step';

@@ -2079,17 +2079,17 @@
   dependencies:
     "@unumid/types" "git+ssh://git@github.com/UnumID/types.git#1.5.0"
 
-"@unumid/react-web-sdk@git+ssh://git@github.com/UnumID/react-web-sdk.git#v1.0.11":
-  version "1.0.11"
-  resolved "git+ssh://git@github.com/UnumID/react-web-sdk.git#549d415c486f5eec941202d581eabb7b46d1dfbc"
-  dependencies:
-    axios "^0.21.1"
-
 "@unumid/types@git+ssh://git@github.com/UnumID/types.git#1.5.0", "@unumid/types@git+ssh://git@github.com/UnumID/types.git#v1.5.0":
   version "1.5.0"
   resolved "git+ssh://git@github.com/UnumID/types.git#ed25da7c28fa6a3de2e242442e9d512e1b0875d2"
   dependencies:
     runtypes "^6.0.0"
+
+"@unumid/web-sdk-react@git+ssh://git@github.com/UnumID/web-sdk-react.git#v1.1.2":
+  version "1.1.2"
+  resolved "git+ssh://git@github.com/UnumID/web-sdk-react.git#fdd68d7a80686537778620d96ca8bd858bbbc41f"
+  dependencies:
+    axios "^0.21.1"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
