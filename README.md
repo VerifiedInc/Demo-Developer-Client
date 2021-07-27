@@ -1,4 +1,4 @@
-# Developer Demo Server
+# Developer Demo Client
 > A demo application frontend which serves as both and [Issuer](https://docs.unum.id/terminology#issuer) and [Verifier](https://docs.unum.id/terminology#verifier). It is an interactive technical walkthrough that explains how the Unum ID platform works.
 
 Information about the Unum ID demo ecosystem can be found in our [documentation](https://docs.unum.id/#demos).
