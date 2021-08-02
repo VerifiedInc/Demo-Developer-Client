@@ -28,7 +28,7 @@ const Intro: FC = () => {
       <Description>
         <LatoLight>
           To begin, install the Developer Demo mobile app <a href=''>here</a>.
-          It will generate a usename for you.
+          It will generate a username for you.
         </LatoLight>
       </Description>
     </section>
