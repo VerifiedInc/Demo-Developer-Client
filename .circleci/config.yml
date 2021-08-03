@@ -75,6 +75,7 @@ jobs:
             --build-arg VERIFIER_UUID=<< parameters.verifier_uuid >> \
             --build-arg HOLDER_APP_UUID=${DEV_HOLDER_APP_UUID} \
             --build-arg API_KEY=${DEV_API_KEY} \
+            --build-arg ENV="development" \
             -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-latest
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-"${CIRCLE_BRANCH}-${CIRCLE_BUILD_NUM}"
@@ -120,6 +121,7 @@ jobs:
             --build-arg VERIFIER_UUID=<< parameters.verifier_uuid >> \
             --build-arg HOLDER_APP_UUID=${SANDBOX_HOLDER_APP_UUID} \
             --build-arg API_KEY=${SANDBOX_API_KEY} \
+            --build-arg ENV="sandbox" \
             -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:sandbox-latest
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:sandbox-"${CIRCLE_TAG}"

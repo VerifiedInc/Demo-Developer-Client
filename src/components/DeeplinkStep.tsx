@@ -30,7 +30,7 @@ const DeeplinkStep: FC<DeeplinkStepProps> = ({
     <Step header={header} description={description} image={step4Image}>
       <StepLeft>
         <UnumIDWidget
-          env={process.env.NODE_ENV === 'development' ? 'development' : 'sandbox'}
+          env={process.env.REACT_APP_ENV}
           apiKey={process.env.REACT_APP_API_KEY as string}
           presentationRequest={request}
           createPresentationRequest={createPresentationRequest}
