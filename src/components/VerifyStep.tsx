@@ -4,10 +4,10 @@ import Step from './Step';
 import StepLeft from './StepLeft';
 import StepRight from './StepRight';
 import HardcodedInput from './HardcodedInput';
-import HardcodedJsonInput from './HardcodedJsonInput';
 import Result from './Result';
 import { Presentation } from '@unumid/types';
 import step6Image from '../assets/step6.png';
+import JsonResult from './JsonResult';
 
 export interface VerifyStepProps {
   verifierDid?: string;
@@ -64,10 +64,9 @@ const VerifyStep: FC<VerifyStepProps> = ({
           value={verifierDid}
           description={verifierDidDescription}
         />
-        <HardcodedJsonInput
-          inputId='presentation'
-          labelText='Presentation'
-          value={JSON.stringify(presentation)}
+        <JsonResult
+          label='Presentation'
+          value={presentation}
           description={presentationDescription}
         />
       </StepLeft>
