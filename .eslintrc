@@ -1,11 +1,9 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "import", "jest"],
-  "extends": ["semistandard-react"],
   "rules": {
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
-    "semistandard-react/prop-types": "off"
+    "@typescript-eslint/no-use-before-define": ["error"]
   },
   "settings": {
     "import/extensions": [".js",".jsx",".ts",".tsx"],
