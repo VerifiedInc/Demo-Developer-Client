@@ -27,7 +27,7 @@ const Intro: FC = () => {
       </Description>
       <Description>
         <LatoLight>
-          To begin, install the Developer Demo mobile app <a href=''>here</a>.
+          To begin, install the Developer Demo mobile app for <a href='https://play.google.com/store/apps/details?id=org.unumid.developerdemo.sandbox'>Android</a> or <a href='https://apps.apple.com/us/app/unum-id-developer-demo/id1566899727'>iOS</a>.
           It will generate a username for you.
         </LatoLight>
       </Description>
