@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import LogRocket from 'logrocket';
 
 import 'typeface-lato';
 import 'typeface-playfair-display';
@@ -8,6 +9,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from './context';
+
+LogRocket.init(process.env.REACT_APP_LOG_ROCKET_ID || '');
 
 ReactDOM.render(
   <React.StrictMode>

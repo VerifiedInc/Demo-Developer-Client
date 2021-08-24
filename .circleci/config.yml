@@ -55,6 +55,10 @@ jobs:
       verifier_uuid:
         type: string
         default: "c1bbf50a-7bf8-4dbb-a450-6518e3f20747"
+      log_rocket_id:
+        type: string
+        default: "vm6x8i/developer-demo-client-dev"
+
 
     steps:
       - checkout
@@ -76,6 +80,7 @@ jobs:
             --build-arg HOLDER_APP_UUID=${DEV_HOLDER_APP_UUID} \
             --build-arg API_KEY=${DEV_API_KEY} \
             --build-arg ENV="development" \
+            --build-arg LOG_ROCKET_ID=<< parameters.log_rocket_id >> \
             -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-latest
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:dev-"${CIRCLE_BRANCH}-${CIRCLE_BUILD_NUM}"
@@ -101,6 +106,9 @@ jobs:
       verifier_uuid:
         type: string
         default: "ccc5a558-a943-4c99-ba33-38fe600246db"
+      log_rocket_id:
+        type: string
+        default: "vm6x8i/developer-demo-client-sandbox"
 
     steps:
       - checkout
@@ -122,6 +130,7 @@ jobs:
             --build-arg HOLDER_APP_UUID=${SANDBOX_HOLDER_APP_UUID} \
             --build-arg API_KEY=${SANDBOX_API_KEY} \
             --build-arg ENV="sandbox" \
+            --build-arg LOG_ROCKET_ID=<< parameters.log_rocket_id >> \
             -t ${CIRCLE_SHA1} .
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:sandbox-latest
             docker tag ${CIRCLE_SHA1} << parameters.reg >>/<< parameters.repo >>:sandbox-"${CIRCLE_TAG}"
