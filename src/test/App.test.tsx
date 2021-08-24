@@ -6,7 +6,7 @@ import { Provider } from '../context';
 describe('app', () => {
   let app: RenderResult;
   beforeEach(() => {
-    app = render(<App />, { wrapper: Provider });
+    app = render(<div id='root'><App /></div>, { wrapper: Provider });
   });
 
   it('shows the intro', () => {
@@ -43,5 +43,9 @@ describe('app', () => {
 
   it('shows logout', () => {
     expect(app.getByText('Log Out')).toBeInTheDocument();
+  });
+
+  it('shows bug report button', () => {
+    expect(app.getByText('Report a Bug')).toBeInTheDocument();
   });
 });

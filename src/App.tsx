@@ -17,6 +17,7 @@ import RevokeStep from './containers/RevokeStep';
 import Logout from './containers/Logout';
 import Intro from './components/Intro';
 import { DemoNoPresentationDto, DemoPresentationDto } from '@unumid/demo-types';
+import Footer from './components/Footer';
 // import { NoPresentation, Presentation } from '@unumid/types';
 
 const isDemoPresentationDto = (obj: DemoPresentationDto | DemoNoPresentationDto): obj is DemoPresentationDto =>
@@ -90,6 +91,7 @@ function App () {
       <VerifyStep />
       <RevokeStep />
       <Logout />
+      <Footer />
     </div>
   );
 }
