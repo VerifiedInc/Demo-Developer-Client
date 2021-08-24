@@ -57,7 +57,7 @@ jobs:
         default: "c1bbf50a-7bf8-4dbb-a450-6518e3f20747"
       log_rocket_id:
         type: string
-        defualt: "vm6x8i/developer-demo-client-dev"
+        default: "vm6x8i/developer-demo-client-dev"
 
 
     steps:
