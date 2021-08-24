@@ -7,7 +7,8 @@ import LatoLight from './LatoLight';
 import './JsonResult.css';
 
 export interface JsonResultProps {
-  value?: object;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value?: any;
   placeholder?: string;
   disabled?: boolean;
   label: string;
@@ -26,24 +27,23 @@ const JsonResult: FC<JsonResultProps> = ({
   return (
     <div className={className}>
       <div className='json-result-label'>{label}</div>
-      { description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description> }
+      {description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description>}
       <div className='json-result-box'>
         {
           disabled
             ? placeholder
             : (
-              value && (
-                <ReactJsonView
-                  src={value}
-                  name={null}
-                  enableClipboard={false}
-                  displayObjectSize={false}
-                  displayDataTypes={false}
-                  collapsed={1}
-                />
+                value && (
+                  <ReactJsonView
+                    src={value}
+                    name={null}
+                    enableClipboard={false}
+                    displayObjectSize={false}
+                    displayDataTypes={false}
+                    collapsed={1}
+                  />
+                )
               )
-
-            )
         }
       </div>
     </div>

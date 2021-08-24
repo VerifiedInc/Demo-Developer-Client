@@ -84,7 +84,7 @@ export interface PresentationRequest {
   holderAppUuid: string;
   credentialRequests: CredentialRequest[];
   proof: Proof;
-  metadata: {}
+  metadata: Record<string, unknown>
 }
 
 export interface VerifierInfo {

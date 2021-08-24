@@ -11,7 +11,7 @@ import { noop } from '../utils/noop';
 export interface UsernameStepProps {
   handleUsernameChange: ChangeEventHandler<HTMLInputElement>;
   handleSubmit: MouseEventHandler;
-  userResult?: object;
+  userResult?: unknown;
   username: string;
   inputErrors?: Record<'username', string>;
 }
@@ -43,7 +43,7 @@ const UsernameStep: FC<UsernameStepProps> = ({
             value={username}
             onChange={handleUsernameChange}
             description={usernameDescription}
-            errorMessage={inputErrors['username']}
+            errorMessage={inputErrors.username}
           />
           <SubmitButton onClick={handleSubmit} disabled={username.length === 0} text='Log In' />
         </form>

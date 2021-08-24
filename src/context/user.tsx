@@ -10,7 +10,7 @@ import { client } from '../feathers';
 import { User, Action, Dispatch } from '../types';
 
 export type UserState = { user: User | undefined };
-type UserProviderProps = PropsWithChildren<{}>;
+type UserProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type UserActionTypes = 'SET_USER' | 'CLEAR_USER';
 export type UserAction = Action<UserActionTypes, User>;

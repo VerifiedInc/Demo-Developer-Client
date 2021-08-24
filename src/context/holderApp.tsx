@@ -10,7 +10,7 @@ import { client } from '../feathers';
 import { HolderApp, Action, Dispatch } from '../types';
 
 export type HolderAppState = { holderApp: HolderApp | undefined };
-type HolderAppProviderProps = PropsWithChildren<{}>;
+type HolderAppProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type HolderAppActionTypes = 'SET_HOLDERAPP';
 export type HolderAppAction = Action<HolderAppActionTypes, HolderApp>;

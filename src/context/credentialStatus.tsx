@@ -10,7 +10,7 @@ import { CredentialStatus, Action, Dispatch } from '../types';
 import { client } from '../feathers';
 
 export type CredentialStatusState = { credentialStatus: CredentialStatus | undefined };
-type CredentialStatusProviderProps = PropsWithChildren<{}>;
+type CredentialStatusProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type CredentialStatusActionTypes = 'SET_CREDENTIAL_STATUS';
 export type CredentialStatusAction = Action<CredentialStatusActionTypes, CredentialStatus>;

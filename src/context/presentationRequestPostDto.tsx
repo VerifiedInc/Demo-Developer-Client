@@ -17,7 +17,7 @@ import {
 export type PresentationRequestPostDtoState = {
   presentationRequestPostDto: PresentationRequestPostDto | undefined
 };
-type PresentationRequestPostDtoProviderProps = PropsWithChildren<{}>;
+type PresentationRequestPostDtoProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type PresentationRequestPostDtoActionTypes = 'SET_PRESENTATIONREQUESTPOSTDTO';
 export type PresentationRequestPostDtoAction =

@@ -24,9 +24,9 @@ const Result: FC<ResultProps> = ({
   return (
     <div className={className}>
       <div className='result-label'>{label}</div>
-      { description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description> }
+      {description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description>}
       <div className='result-box'>
-        <span className='result-value'>{ disabled ? placeholder : value }</span>
+        <span className='result-value'>{disabled ? placeholder : value}</span>
       </div>
     </div>
   );

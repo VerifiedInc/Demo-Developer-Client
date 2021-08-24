@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren } from 'react';
 import './Description.css';
 
-type DescriptionProps = PropsWithChildren<{}>;
+type DescriptionProps = PropsWithChildren<Record<string, unknown>>;
 
 const Description: FC<DescriptionProps> = ({ children = null }) => {
   return (

@@ -34,7 +34,7 @@ const Input: FC<InputProps> = ({
     <div className='input'>
       <label htmlFor={inputId}>
         <div className='input-label'>{labelText}</div>
-        { description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description> }
+        {description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description>}
         <input
           id={inputId}
           type={type}
