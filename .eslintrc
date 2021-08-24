@@ -1,9 +1,20 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "import", "jest"],
+  "extends": [
+    "semistandard",
+    "standard-jsx",
+    "standard-react",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"]
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/extensions": [".js",".jsx",".ts",".tsx"],
