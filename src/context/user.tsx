@@ -48,6 +48,7 @@ export const loginUser = async (dispatch: UserDispatch, username: string): Promi
 
 export const logoutUser = async (dispatch: UserDispatch): Promise<void> => {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (client as any).logout();
     clearUser(dispatch);
   } catch (e) {

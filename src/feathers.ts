@@ -11,7 +11,7 @@ const socket = socketio(
 );
 
 class MyAuthenticationClient extends AuthenticationClient {
-  async handleError (error: FeathersError, type: 'authenticate' | 'logout'): Promise<any> {
+  async handleError (error: FeathersError, type: 'authenticate' | 'logout'): Promise<unknown> {
     console.log('error', error);
     return super.handleError(error, type);
   }

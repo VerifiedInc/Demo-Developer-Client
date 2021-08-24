@@ -43,6 +43,7 @@ export interface Proof {
 
 export interface CredentialSubject {
   id: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
@@ -106,7 +107,7 @@ export interface CredentialOptions {
   claims: Record<string, unknown>;
 }
 
-export interface Action<AllowedTypes = string, Payload = any> {
+export interface Action<AllowedTypes = string, Payload = unknown> {
   type: AllowedTypes;
   payload?: Payload
 }
