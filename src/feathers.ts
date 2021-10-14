@@ -16,7 +16,9 @@ class MyAuthenticationClient extends AuthenticationClient {
     return super.handleError(error, type);
   }
 }
-client.configure(feathersSocketio(socket));
+client.configure(feathersSocketio(socket, {
+  timeout: 10000 // 10 seconds; default is 5 seconds
+}));
 client.configure(auth({
   Authentication: MyAuthenticationClient,
   storage: window.localStorage,
