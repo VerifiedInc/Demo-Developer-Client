@@ -49,7 +49,7 @@ jobs:
         type: string
       api_url:
         type: string
-        default: "https://developer-api.demo.dev-unum.id"
+        default: "https://developer-api.demo.dev-unumid.co"
       issuer_uuid:
         type: string
         default: "d14ca24c-5323-4b79-9dfa-6471b014d68c"
@@ -100,7 +100,7 @@ jobs:
         type: string
       api_url:
         type: string
-        default: "https://developer-api.demo.unum.id"
+        default: "https://developer-api.demo.unumid.co"
       issuer_uuid:
         type: string
         default: "ba63eef3-58e7-4964-bd62-75948de5fa67"
