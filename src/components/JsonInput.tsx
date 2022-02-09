@@ -49,7 +49,7 @@ const JsonInput: FC<JsonInputProps> = ({
     <div className='json-input'>
       <label htmlFor={inputId}>
         <div className='json-input-label'>{labelText}</div>
-        { description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description> }
+        {description && <Description><Italic><LatoLight>{description}</LatoLight></Italic></Description>}
         <TextAreaAutosize
           className={isValid ? 'valid' : 'invalid'}
           id={inputId}

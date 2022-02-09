@@ -10,7 +10,7 @@ import { client } from '../feathers';
 import { User, Action, Dispatch } from '../types';
 
 export type UserState = { user: User | undefined };
-type UserProviderProps = PropsWithChildren<{}>;
+type UserProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type UserActionTypes = 'SET_USER' | 'CLEAR_USER';
 export type UserAction = Action<UserActionTypes, User>;
@@ -48,6 +48,7 @@ export const loginUser = async (dispatch: UserDispatch, username: string): Promi
 
 export const logoutUser = async (dispatch: UserDispatch): Promise<void> => {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (client as any).logout();
     clearUser(dispatch);
   } catch (e) {

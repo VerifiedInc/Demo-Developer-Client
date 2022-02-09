@@ -10,7 +10,7 @@ import { Action, Dispatch } from '../types';
 import { NoPresentation } from '@unumid/types';
 
 export type NoPresentationState = { noPresentation: NoPresentation | undefined };
-type NoPresentationProviderProps = PropsWithChildren<{}>;
+type NoPresentationProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type NoPresentationActionTypes = 'SET_NOPRESENTATION';
 export type NoPresentationAction = Action<NoPresentationActionTypes, NoPresentation>;

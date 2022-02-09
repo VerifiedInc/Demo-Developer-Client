@@ -29,7 +29,7 @@ const isDemoPresentationDto = (obj: DemoPresentationDto | DemoNoPresentationDto)
 //   data: Presentation | NoPresentation;
 // }
 
-function App () {
+function App (): JSX.Element {
   const presentationDispatch = usePresentationDispatch();
   const noPresentationDispatch = useNoPresentationDispatch();
 

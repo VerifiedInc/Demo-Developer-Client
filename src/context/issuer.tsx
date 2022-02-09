@@ -10,7 +10,7 @@ import { client } from '../feathers';
 import { Issuer, Action, Dispatch } from '../types';
 
 export type IssuerState = { issuer: Issuer | undefined };
-type IssuerProviderProps = PropsWithChildren<{}>;
+type IssuerProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type IssuerActionTypes = 'SET_ISSUER';
 export type IssuerAction = Action<IssuerActionTypes, Issuer>;

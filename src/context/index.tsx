@@ -10,7 +10,7 @@ import { NoPresentationProvider } from './noPresentation';
 import { CredentialProvider } from './credential';
 import { CredentialStatusProvider } from './credentialStatus';
 
-type ProviderProps = PropsWithChildren<{}>;
+type ProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 export const Provider: FC<ProviderProps> = ({ children = null }) => (
   <UserProvider>

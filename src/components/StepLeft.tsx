@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 
-type StepLeftProps = PropsWithChildren<{}>;
+type StepLeftProps = PropsWithChildren<Record<string, unknown>>;
 
 const StepLeft: FC<StepLeftProps> = ({ children = null }) => {
   return (

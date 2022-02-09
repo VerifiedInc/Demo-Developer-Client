@@ -8,7 +8,7 @@ import step4Image from '../assets/step4.png';
 
 export interface DeeplinkStepProps {
   request?: PresentationRequestPostDto
-  createPresentationRequest: () => Promise<any>
+  createPresentationRequest: () => Promise<unknown>
 }
 
 const DeeplinkStep: FC<DeeplinkStepProps> = ({

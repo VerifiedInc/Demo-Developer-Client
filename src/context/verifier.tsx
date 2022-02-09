@@ -10,7 +10,7 @@ import { client } from '../feathers';
 import { Verifier, Action, Dispatch } from '../types';
 
 export type VerifierState = { verifier: Verifier | undefined };
-type VerifierProviderProps = PropsWithChildren<{}>;
+type VerifierProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type VerifierActionTypes = 'SET_VERIFIER';
 export type VerifierAction = Action<VerifierActionTypes, Verifier>;

@@ -10,7 +10,7 @@ import React, {
 import { Action, Dispatch } from '../types';
 
 export type PresentationState = { presentation: Presentation | undefined, isVerified: boolean | undefined };
-type PresentationProviderProps = PropsWithChildren<{}>;
+type PresentationProviderProps = PropsWithChildren<Record<string, unknown>>;
 
 type SetPresentationAction = Action<'SET_PRESENTATION', Presentation | undefined>
 type SetIsValidAction = Action<'SET_IS_VERIFIED', boolean | undefined>

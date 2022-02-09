@@ -19,8 +19,8 @@ const Step: FC<StepProps> = ({
   return (
     <div className='step'>
       <h2 className='step-header'>{header}</h2>
-      { description && <Description><LatoLight>{description}</LatoLight></Description> }
-      { image && <img className='step-banner' src={image} /> }
+      {description && <Description><LatoLight>{description}</LatoLight></Description>}
+      {image && <img className='step-banner' src={image} />}
       <div className='step-body'>
         {children}
       </div>
