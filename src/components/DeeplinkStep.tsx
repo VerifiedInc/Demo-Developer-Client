@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import UnumIDWidget from '@unumid/web-sdk-react';
+import UnumIDWidget, { SaasEnvironment } from '@unumid/web-sdk-react';
 import { PresentationRequestPostDto } from '@unumid/types';
 
 import Step from './Step';
@@ -30,7 +30,7 @@ const DeeplinkStep: FC<DeeplinkStepProps> = ({
     <Step header={header} description={description} image={step4Image}>
       <StepLeft>
         <UnumIDWidget
-          env={process.env.REACT_APP_ENV}
+          env={process.env.REACT_APP_ENV as SaasEnvironment}
           apiKey={process.env.REACT_APP_API_KEY as string}
           presentationRequest={request}
           createPresentationRequest={createPresentationRequest}
