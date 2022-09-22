@@ -259,7 +259,7 @@ workflows:
             - Slack-Context
           repo: demo-developer-client
           deployment: demo-developer-client
-          namespace: demos
+          namespace: default
           filters:
             tags:
               only: /^v.*/
