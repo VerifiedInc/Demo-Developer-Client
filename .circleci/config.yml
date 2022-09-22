@@ -100,7 +100,7 @@ jobs:
         type: string
       api_url:
         type: string
-        default: "https://developer-api.demo.unumid.co"
+        default: "https://developer-api.demo.sandbox-unumid.co"
       issuer_uuid:
         type: string
         default: "ba63eef3-58e7-4964-bd62-75948de5fa67"
